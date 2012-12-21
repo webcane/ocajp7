@@ -8,6 +8,17 @@
 
 var _ = window.Highlight = {
 	languages: {
+		java: {
+			'comment': /(\/\*.*?\*\/)|\/\/.*?(\r?\n|$)/g,
+			'regex': /\/(\\?.)+?\/[gim]{0,3}/g,
+			'string': /(('|").*?(\2))/g, // used to be: /'.*?'|".*?"/g,
+			'keyword': /\b(abstract|assert|breack|byte|case|class|const|continue|default|enum|extends|final|goto|implements|import|interface|long|native|package|private|protected|public|static|strictfp|super|switch|synchronized|this|throw|throws|transient|void|volatile|while|if|else|while|do|for|return|instanceof|new|with|try|catch|finally|null|int|boolean|short|float|double|char|String)\b/g,
+			'boolean': /\b(true|false)\b/g,
+			'number': /\b-?(0x)?\d*\.?\d+\b/g,
+			'operator': /([-+!=<>]|&lt;){1,3}/g,
+			'ignore': /&(lt|gt|amp);/gi,
+			'punctuation': /[{}[\];(),.]/g
+		},	
 		javascript: {
 			'comment': /(\/\*.*?\*\/)|\/\/.*?(\r?\n|$)/g,
 			'regex': /\/(\\?.)+?\/[gim]{0,3}/g,
