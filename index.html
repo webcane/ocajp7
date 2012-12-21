@@ -26,7 +26,7 @@
 
 <!-- OCAJP topics -->
 <section>
-	<section class="slide" data-l10n-id="section-exam-topics" title="Темы экзамена">
+	<section class="slide" data-l10n-id="section-exam-topics" title="РўРµРјС‹ СЌРєР·Р°РјРµРЅР°">
 		<h2 data-l10n-id="exam-topics">Exam Topics</h2>	
 		<ul class="topics">
 			<li><a href="#basics" data-l10n-id="t1-basics">Java Basics</a></li>
@@ -48,18 +48,18 @@
 		<h1 data-l10n-id="t1-java-basics">Java Basics</h1>
 	</header>	
 	
-	<section class="slide" title="Область видимости">
+	<section class="slide" title="РћР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё">
 		<h2>Define the scope of variables</h2>	
 		<ul>
 			<li>Different kinds of variables have different scopes.</li>
-			<li class="delayed"><a href="#fields_variables">В Java имеется две основные области видимости для переменных - определяемые классом и методом (fields and variables).</a></li>
+			<li class="delayed"><a href="#fields_variables">Р’ Java РёРјРµРµС‚СЃСЏ РґРІРµ РѕСЃРЅРѕРІРЅС‹Рµ РѕР±Р»Р°СЃС‚Рё РІРёРґРёРјРѕСЃС‚Рё РґР»СЏ РїРµСЂРµРјРµРЅРЅС‹С… - РѕРїСЂРµРґРµР»СЏРµРјС‹Рµ РєР»Р°СЃСЃРѕРј Рё РјРµС‚РѕРґРѕРј (fields and variables).</a></li>
 			<li class="delayed"><a href="#variable_hiding_1">A local variable shadows an instance variable.</a></li>
 			<li class="delayed"><a href="#variable_hiding_2">Instance variable shadows the inherited variable from it's parent classes.</a></li>			
 			<li class="delayed">Instance variables are not <a href="#overriding_hiding" title="overriding hiding example">overridden</a>, they are <a href="#overriding_hiding" title="overriding hiding example">hidden</a>.</li>
 		</ul>
 	</section>
 	
-	<section class="slide" id="fields_variables" title="Переменные">
+	<section class="slide" id="fields_variables" title="РџРµСЂРµРјРµРЅРЅС‹Рµ">
 		<h2>Variables</h2>
 		<p>The Java programming language defines the following kinds of variables:</p>		
 		<ul>
@@ -85,23 +85,23 @@
 }</code></pre>
 	</section>
 	
-	<section class="slide" id="instance_variables_1" title="Переменные экземпляра класса">
+	<section class="slide" id="instance_variables_1" title="РџРµСЂРµРјРµРЅРЅС‹Рµ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР°">
 		<h2>Instance Variables</h2>	
 		<ul>
-		    <li class="delayed">Переменные экземпляра объявляются в классе, но вне любого метода конструктора или блока.</li>
+		    <li class="delayed">РџРµСЂРµРјРµРЅРЅС‹Рµ СЌРєР·РµРјРїР»СЏСЂР° РѕР±СЉСЏРІР»СЏСЋС‚СЃСЏ РІ РєР»Р°СЃСЃРµ, РЅРѕ РІРЅРµ Р»СЋР±РѕРіРѕ РјРµС‚РѕРґР° РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РёР»Рё Р±Р»РѕРєР°.</li>
 			<li class="delayed">.</li>
 			<li class="delayed">.</li>
 			<li class="delayed">.</li>
 		</ul>        
 	</section>
 	
-	<section class="slide" id="instance_variables_2" title="Переменные экземпляра класса">
+	<section class="slide" id="instance_variables_2" title="РџРµСЂРµРјРµРЅРЅС‹Рµ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР°">
 		<h2>Instance Variables</h2>	
 		<ul>
-		    <li class="delayed">Instance Variable может быть доступна только в пределах существования экземпляра класса.</li>
-			<li class="delayed">Instance Variable может явно содержать модификатор доступа.</li>
-			<li class="delayed">Instance Variable вызывается через обращение к объекту класса.</li>
-			<li class="delayed">Все Instance Variables которым небыли присвоены явные значения, автоматически инициализуются значениями по умолчанию перед вызовом конструктора.</li>
+		    <li class="delayed">Instance Variable РјРѕР¶РµС‚ Р±С‹С‚СЊ РґРѕСЃС‚СѓРїРЅР° С‚РѕР»СЊРєРѕ РІ РїСЂРµРґРµР»Р°С… СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР°.</li>
+			<li class="delayed">Instance Variable РјРѕР¶РµС‚ СЏРІРЅРѕ СЃРѕРґРµСЂР¶Р°С‚СЊ РјРѕРґРёС„РёРєР°С‚РѕСЂ РґРѕСЃС‚СѓРїР°.</li>
+			<li class="delayed">Instance Variable РІС‹Р·С‹РІР°РµС‚СЃСЏ С‡РµСЂРµР· РѕР±СЂР°С‰РµРЅРёРµ Рє РѕР±СЉРµРєС‚Сѓ РєР»Р°СЃСЃР°.</li>
+			<li class="delayed">Р’СЃРµ Instance Variables РєРѕС‚РѕСЂС‹Рј РЅРµР±С‹Р»Рё РїСЂРёСЃРІРѕРµРЅС‹ СЏРІРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ, Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РёРЅРёС†РёР°Р»РёР·СѓСЋС‚СЃСЏ Р·РЅР°С‡РµРЅРёСЏРјРё РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РїРµСЂРµРґ РІС‹Р·РѕРІРѕРј РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.</li>
 		</ul>
 <pre class="delayed"><code lang="java">public class InstanceVariables {	
 	private int i;	
@@ -112,21 +112,21 @@
 }</code></pre>        
 	</section>
 	
-	<section class="slide" id="class_variables" title="Переменные класса">
+	<section class="slide" id="class_variables" title="РџРµСЂРµРјРµРЅРЅС‹Рµ РєР»Р°СЃСЃР°">
 		<h2>Class Variables</h2>	
 		<ul>
-		    <li class="delayed">Cтатические переменные инициализируются в момент загрузки класса и уничтожаются, когда программа останавливается.</li>
-			<li class="delayed">Cтатические переменные едины для всех экземляров класса.</li>
+		    <li class="delayed">CС‚Р°С‚РёС‡РµСЃРєРёРµ РїРµСЂРµРјРµРЅРЅС‹Рµ РёРЅРёС†РёР°Р»РёР·РёСЂСѓСЋС‚СЃСЏ РІ РјРѕРјРµРЅС‚ Р·Р°РіСЂСѓР·РєРё РєР»Р°СЃСЃР° Рё СѓРЅРёС‡С‚РѕР¶Р°СЋС‚СЃСЏ, РєРѕРіРґР° РїСЂРѕРіСЂР°РјРјР° РѕСЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ.</li>
+			<li class="delayed">CС‚Р°С‚РёС‡РµСЃРєРёРµ РїРµСЂРµРјРµРЅРЅС‹Рµ РµРґРёРЅС‹ РґР»СЏ РІСЃРµС… СЌРєР·РµРјР»СЏСЂРѕРІ РєР»Р°СЃСЃР°.</li>
 		</ul>
 	</section>
 	
 	
-	<section class="slide" id="constants" title="Константы">
+	<section class="slide" id="constants" title="РљРѕРЅСЃС‚Р°РЅС‚С‹">
 		<h2>Constants</h2>	
 		<ul>
-		    <li class="delayed">Константы в Java это переменные класса объявленные как public/private, final и static.</li>
-			<li class="delayed">Константы никогда не изменяют начального состояния.</li>
-			<li class="delayed">Константы принято именовать в верхнем регистре.</li>
+		    <li class="delayed">РљРѕРЅСЃС‚Р°РЅС‚С‹ РІ Java СЌС‚Рѕ РїРµСЂРµРјРµРЅРЅС‹Рµ РєР»Р°СЃСЃР° РѕР±СЉСЏРІР»РµРЅРЅС‹Рµ РєР°Рє public/private, final Рё static.</li>
+			<li class="delayed">РљРѕРЅСЃС‚Р°РЅС‚С‹ РЅРёРєРѕРіРґР° РЅРµ РёР·РјРµРЅСЏСЋС‚ РЅР°С‡Р°Р»СЊРЅРѕРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ.</li>
+			<li class="delayed">РљРѕРЅСЃС‚Р°РЅС‚С‹ РїСЂРёРЅСЏС‚Рѕ РёРјРµРЅРѕРІР°С‚СЊ РІ РІРµСЂС…РЅРµРј СЂРµРіРёСЃС‚СЂРµ.</li>
 		</ul>
 <pre class="delayed"><code lang="java">class Employee{
    // DEPARTMENT is a constant
@@ -135,11 +135,11 @@
 	</section>	
     
 	
-	<section class="slide" id="local_variables" title="Локальные переменные">
+	<section class="slide" id="local_variables" title="Р›РѕРєР°Р»СЊРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ">
 		<h2>Local Variables</h2>	
 		<ul>
-		    <li class="delayed">Локальные переменные не инициализуются значениями по умолчанию автоматически.</li>
-			<li class="delayed">Локальные переменные должны быть явно инициализированы перед использованием, иначе будет ошибка компиляции.</li>
+		    <li class="delayed">Р›РѕРєР°Р»СЊРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ РЅРµ РёРЅРёС†РёР°Р»РёР·СѓСЋС‚СЃСЏ Р·РЅР°С‡РµРЅРёСЏРјРё РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё.</li>
+			<li class="delayed">Р›РѕРєР°Р»СЊРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ СЏРІРЅРѕ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅС‹ РїРµСЂРµРґ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј, РёРЅР°С‡Рµ Р±СѓРґРµС‚ РѕС€РёР±РєР° РєРѕРјРїРёР»СЏС†РёРё.</li>
 			<li class="delayed">Access modifiers cannot be used for local variables.</li>
 			<li class="delayed">Local variables are visible only within the declared method, constructor or block.</li>
 		</ul>
@@ -151,7 +151,7 @@
 }</code></pre>        
 	</section>
     
-	<section class="slide" id="method_parameters" title="Параметры метода">
+	<section class="slide" id="method_parameters" title="РџР°СЂР°РјРµС‚СЂС‹ РјРµС‚РѕРґР°">
 		<h2>Method Parameters</h2>	
 		<ul>
 		    <li class="delayed"></li>
@@ -159,61 +159,61 @@
 		</ul>
 	</section>
 	
-	<section class="slide" title="Область видимости">
+	<section class="slide" title="РћР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё">
 		<h2>Define the scope of variables</h2>	
 		<ul>
-			<li>Область видимости определяет продолжительность существования переменных.</li>
-			<li class="delayed">Java допускает объявление переменных внутри любого блока (в фигурных скобках).</li>
-			<li class="delayed">Правила обработки области видимости - основы инкапсуляции.</li>						
-			<li class="delayed">Области видимости могут быть вложенными.</li>
-			<li class="delayed">Объекты объявленный во внешней области, будут видны коду во внутренней области.</li>			
+			<li>РћР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё РѕРїСЂРµРґРµР»СЏРµС‚ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С….</li>
+			<li class="delayed">Java РґРѕРїСѓСЃРєР°РµС‚ РѕР±СЉСЏРІР»РµРЅРёРµ РїРµСЂРµРјРµРЅРЅС‹С… РІРЅСѓС‚СЂРё Р»СЋР±РѕРіРѕ Р±Р»РѕРєР° (РІ С„РёРіСѓСЂРЅС‹С… СЃРєРѕР±РєР°С…).</li>
+			<li class="delayed">РџСЂР°РІРёР»Р° РѕР±СЂР°Р±РѕС‚РєРё РѕР±Р»Р°СЃС‚Рё РІРёРґРёРјРѕСЃС‚Рё - РѕСЃРЅРѕРІС‹ РёРЅРєР°РїСЃСѓР»СЏС†РёРё.</li>						
+			<li class="delayed">РћР±Р»Р°СЃС‚Рё РІРёРґРёРјРѕСЃС‚Рё РјРѕРіСѓС‚ Р±С‹С‚СЊ РІР»РѕР¶РµРЅРЅС‹РјРё.</li>
+			<li class="delayed">РћР±СЉРµРєС‚С‹ РѕР±СЉСЏРІР»РµРЅРЅС‹Р№ РІРѕ РІРЅРµС€РЅРµР№ РѕР±Р»Р°СЃС‚Рё, Р±СѓРґСѓС‚ РІРёРґРЅС‹ РєРѕРґСѓ РІРѕ РІРЅСѓС‚СЂРµРЅРЅРµР№ РѕР±Р»Р°СЃС‚Рё.</li>			
 		</ul>
 	</section>
 	
-	<section class="slide" title="Область видимости">
+	<section class="slide" title="РћР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё">
 		<h2>Define the scope of variables</h2>	
 		<ul>		
-			<li class="delayed">Входные параметры метода также включаются в его область видимости.</li>
-			<li class="delayed">Переменные объявленные внутри области видимости, не доступны внешнему коду.</li>
-			<li class="delayed">Внутри блока переменные можно объявлять в любом месте, но доступными они становятся только после объявления.</li>
-			<li class="delayed">Продолжительность существования переменной ограничена ее областью видимости.</li>
-			<li class="delayed">Во внутреннем блоке нельзя объявить переменную с тем же именем что и во внешнем.</li>			
+			<li class="delayed">Р’С…РѕРґРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РјРµС‚РѕРґР° С‚Р°РєР¶Рµ РІРєР»СЋС‡Р°СЋС‚СЃСЏ РІ РµРіРѕ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё.</li>
+			<li class="delayed">РџРµСЂРµРјРµРЅРЅС‹Рµ РѕР±СЉСЏРІР»РµРЅРЅС‹Рµ РІРЅСѓС‚СЂРё РѕР±Р»Р°СЃС‚Рё РІРёРґРёРјРѕСЃС‚Рё, РЅРµ РґРѕСЃС‚СѓРїРЅС‹ РІРЅРµС€РЅРµРјСѓ РєРѕРґСѓ.</li>
+			<li class="delayed">Р’РЅСѓС‚СЂРё Р±Р»РѕРєР° РїРµСЂРµРјРµРЅРЅС‹Рµ РјРѕР¶РЅРѕ РѕР±СЉСЏРІР»СЏС‚СЊ РІ Р»СЋР±РѕРј РјРµСЃС‚Рµ, РЅРѕ РґРѕСЃС‚СѓРїРЅС‹РјРё РѕРЅРё СЃС‚Р°РЅРѕРІСЏС‚СЃСЏ С‚РѕР»СЊРєРѕ РїРѕСЃР»Рµ РѕР±СЉСЏРІР»РµРЅРёСЏ.</li>
+			<li class="delayed">РџСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ РїРµСЂРµРјРµРЅРЅРѕР№ РѕРіСЂР°РЅРёС‡РµРЅР° РµРµ РѕР±Р»Р°СЃС‚СЊСЋ РІРёРґРёРјРѕСЃС‚Рё.</li>
+			<li class="delayed">Р’Рѕ РІРЅСѓС‚СЂРµРЅРЅРµРј Р±Р»РѕРєРµ РЅРµР»СЊР·СЏ РѕР±СЉСЏРІРёС‚СЊ РїРµСЂРµРјРµРЅРЅСѓСЋ СЃ С‚РµРј Р¶Рµ РёРјРµРЅРµРј С‡С‚Рѕ Рё РІРѕ РІРЅРµС€РЅРµРј.</li>			
 		</ul>
 	</section>	
 	
-	<section class="slide" title="Класс в Java">
+	<section class="slide" title="РљР»Р°СЃСЃ РІ Java">
 		<h2>Define the structure of a Java class</h2>		
-		<!-- <p>Класс - центральное понятие в Java.</p> -->
+		<!-- <p>РљР»Р°СЃСЃ - С†РµРЅС‚СЂР°Р»СЊРЅРѕРµ РїРѕРЅСЏС‚РёРµ РІ Java.</p> -->
 		<ul>
-		    <li>Класс - центральное понятие в Java.</li>
-			<li class="delayed">Класс используется для создания объектов.</li>
-			<li class="delayed">Класс определяет новый тип данных.</li>
-			<li class="delayed">Класс - это <code>шаблон</code> объекта, а объект - это <code>экземпляр</code> класса.</li>
-			<li class="delayed">Код класса определяет интерфейс к его данным.</li>
+		    <li>РљР»Р°СЃСЃ - С†РµРЅС‚СЂР°Р»СЊРЅРѕРµ РїРѕРЅСЏС‚РёРµ РІ Java.</li>
+			<li class="delayed">РљР»Р°СЃСЃ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РѕР±СЉРµРєС‚РѕРІ.</li>
+			<li class="delayed">РљР»Р°СЃСЃ РѕРїСЂРµРґРµР»СЏРµС‚ РЅРѕРІС‹Р№ С‚РёРї РґР°РЅРЅС‹С….</li>
+			<li class="delayed">РљР»Р°СЃСЃ - СЌС‚Рѕ <code>С€Р°Р±Р»РѕРЅ</code> РѕР±СЉРµРєС‚Р°, Р° РѕР±СЉРµРєС‚ - СЌС‚Рѕ <code>СЌРєР·РµРјРїР»СЏСЂ</code> РєР»Р°СЃСЃР°.</li>
+			<li class="delayed">РљРѕРґ РєР»Р°СЃСЃР° РѕРїСЂРµРґРµР»СЏРµС‚ РёРЅС‚РµСЂС„РµР№СЃ Рє РµРіРѕ РґР°РЅРЅС‹Рј.</li>
 		</ul>
 	</section>
 	
-	<section class="slide" title="объявление классов">
+	<section class="slide" title="РѕР±СЉСЏРІР»РµРЅРёРµ РєР»Р°СЃСЃРѕРІ">
 		<h2>Define the structure of a Java class</h2>	
 		<ul>
-			<li class="delayed">Для объявления класса служит ключевое слово <code>class</code>.</li>
-			<li class="delayed">Класс может не содержать метод <code>main()</code>.</li>
-			<li class="delayed">Для доступа к переменным применяется оператор точка <code>.</code>.</li>
-			<li class="delayed">Для создания объекта класса служит оператор <code>new</code>.</li>		
+			<li class="delayed">Р”Р»СЏ РѕР±СЉСЏРІР»РµРЅРёСЏ РєР»Р°СЃСЃР° СЃР»СѓР¶РёС‚ РєР»СЋС‡РµРІРѕРµ СЃР»РѕРІРѕ <code>class</code>.</li>
+			<li class="delayed">РљР»Р°СЃСЃ РјРѕР¶РµС‚ РЅРµ СЃРѕРґРµСЂР¶Р°С‚СЊ РјРµС‚РѕРґ <code>main()</code>.</li>
+			<li class="delayed">Р”Р»СЏ РґРѕСЃС‚СѓРїР° Рє РїРµСЂРµРјРµРЅРЅС‹Рј РїСЂРёРјРµРЅСЏРµС‚СЃСЏ РѕРїРµСЂР°С‚РѕСЂ С‚РѕС‡РєР° <code>.</code>.</li>
+			<li class="delayed">Р”Р»СЏ СЃРѕР·РґР°РЅРёСЏ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР° СЃР»СѓР¶РёС‚ РѕРїРµСЂР°С‚РѕСЂ <code>new</code>.</li>		
 		</ul>
 	</section>	
 	
-	<section class="slide" title="объявление объектов">
+	<section class="slide" title="РѕР±СЉСЏРІР»РµРЅРёРµ РѕР±СЉРµРєС‚РѕРІ">
 		<h2>Define the structure of a Java class</h2>	
 		<ul>	
-			<li class="delayed">Для Java все объекты классов должны создаваться динамически, используя оператор <code>new</code>.</li>			
-			<li class="delayed">Ссылка на объект класса содержит адрес объекта в памяти и хранится в переменной.</li>			
+			<li class="delayed">Р”Р»СЏ Java РІСЃРµ РѕР±СЉРµРєС‚С‹ РєР»Р°СЃСЃРѕРІ РґРѕР»Р¶РЅС‹ СЃРѕР·РґР°РІР°С‚СЊСЃСЏ РґРёРЅР°РјРёС‡РµСЃРєРё, РёСЃРїРѕР»СЊР·СѓСЏ РѕРїРµСЂР°С‚РѕСЂ <code>new</code>.</li>			
+			<li class="delayed">РЎСЃС‹Р»РєР° РЅР° РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° СЃРѕРґРµСЂР¶РёС‚ Р°РґСЂРµСЃ РѕР±СЉРµРєС‚Р° РІ РїР°РјСЏС‚Рё Рё С…СЂР°РЅРёС‚СЃСЏ РІ РїРµСЂРµРјРµРЅРЅРѕР№.</li>			
 		</ul>
-		<pre class="delayed"><code lang="java">Box obj; //объявление ссылки на объект
+		<pre class="delayed"><code lang="java">Box obj; //РѕР±СЉСЏРІР»РµРЅРёРµ СЃСЃС‹Р»РєРё РЅР° РѕР±СЉРµРєС‚
 // obj = null;
-obj = new Box(); // резервирование памяти для объекта
-// и присвоение переменной obj ссылки на этот объект
-// Box() - конструктор класса Box</code></pre>
+obj = new Box(); // СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ РѕР±СЉРµРєС‚Р°
+// Рё РїСЂРёСЃРІРѕРµРЅРёРµ РїРµСЂРµРјРµРЅРЅРѕР№ obj СЃСЃС‹Р»РєРё РЅР° СЌС‚РѕС‚ РѕР±СЉРµРєС‚
+// Box() - РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° Box</code></pre>
 	</section>	
 	
 	<section class="slide" title="Java Basics">
@@ -388,33 +388,33 @@ String c2[] = s[j]; // compile error!
 		<h1 data-l10n-id="t7-inheritance-h">Working with Inheritance</h1>
 	</header>
 	
-	<section class="slide" title="Интерфейсы">
+	<section class="slide" title="РРЅС‚РµСЂС„РµР№СЃС‹">
 		<h2>Use abstract classes and interfaces</h2>	
 		<ul>
-			<li class="delayed">Интерфейсы сообщают классу <code>что</code> он должен делать, но не то <code>как</code> он это будет делать.</li>
-			<li class="delayed">Интерфейсы могут наследовать множество интерфейсов (<code>implements</code>), но не могут наследовать классы.</li>			
-			<li class="delayed">Интерфейсы предназначены для поддержки динамического разрешения методов во время выполнения.</li>
-			<li class="delayed">В файле должен быть объявлен только один public интерфейс.</li>
+			<li class="delayed">РРЅС‚РµСЂС„РµР№СЃС‹ СЃРѕРѕР±С‰Р°СЋС‚ РєР»Р°СЃСЃСѓ <code>С‡С‚Рѕ</code> РѕРЅ РґРѕР»Р¶РµРЅ РґРµР»Р°С‚СЊ, РЅРѕ РЅРµ С‚Рѕ <code>РєР°Рє</code> РѕРЅ СЌС‚Рѕ Р±СѓРґРµС‚ РґРµР»Р°С‚СЊ.</li>
+			<li class="delayed">РРЅС‚РµСЂС„РµР№СЃС‹ РјРѕРіСѓС‚ РЅР°СЃР»РµРґРѕРІР°С‚СЊ РјРЅРѕР¶РµСЃС‚РІРѕ РёРЅС‚РµСЂС„РµР№СЃРѕРІ (<code>implements</code>), РЅРѕ РЅРµ РјРѕРіСѓС‚ РЅР°СЃР»РµРґРѕРІР°С‚СЊ РєР»Р°СЃСЃС‹.</li>			
+			<li class="delayed">РРЅС‚РµСЂС„РµР№СЃС‹ РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅС‹ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ СЂР°Р·СЂРµС€РµРЅРёСЏ РјРµС‚РѕРґРѕРІ РІРѕ РІСЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ.</li>
+			<li class="delayed">Р’ С„Р°Р№Р»Рµ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅ С‚РѕР»СЊРєРѕ РѕРґРёРЅ public РёРЅС‚РµСЂС„РµР№СЃ.</li>
 		</ul>
 	</section>
 	
-	<section class="slide" title="Классы реализующие интерфесы">
+	<section class="slide" title="РљР»Р°СЃСЃС‹ СЂРµР°Р»РёР·СѓСЋС‰РёРµ РёРЅС‚РµСЂС„РµСЃС‹">
 		<h2>Use abstract classes and interfaces</h2>	
 		<!-- <p></p> -->
 		<ul>
-			<li class="delayed">Вложенный интерфейс может быть объявлен как public, private или protected..</li>
+			<li class="delayed">Р’Р»РѕР¶РµРЅРЅС‹Р№ РёРЅС‚РµСЂС„РµР№СЃ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅ РєР°Рє public, private РёР»Рё protected..</li>
 			
-			<li class="delayed">Класс может наследовать только один класс (<code>extends</code>), но реализовывать множество интерфейсов (<code>implements</code>).</li>
-			<li class="delayed">Каждый класс, который включает в себя интерфейс, должен реализовать все его методы.</li>
-			<li class="delayed">Классы никак не связанные между собой в иерархии классов, могут реализовывать один интерфейс.</li>	
+			<li class="delayed">РљР»Р°СЃСЃ РјРѕР¶РµС‚ РЅР°СЃР»РµРґРѕРІР°С‚СЊ С‚РѕР»СЊРєРѕ РѕРґРёРЅ РєР»Р°СЃСЃ (<code>extends</code>), РЅРѕ СЂРµР°Р»РёР·РѕРІС‹РІР°С‚СЊ РјРЅРѕР¶РµСЃС‚РІРѕ РёРЅС‚РµСЂС„РµР№СЃРѕРІ (<code>implements</code>).</li>
+			<li class="delayed">РљР°Р¶РґС‹Р№ РєР»Р°СЃСЃ, РєРѕС‚РѕСЂС‹Р№ РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ РёРЅС‚РµСЂС„РµР№СЃ, РґРѕР»Р¶РµРЅ СЂРµР°Р»РёР·РѕРІР°С‚СЊ РІСЃРµ РµРіРѕ РјРµС‚РѕРґС‹.</li>
+			<li class="delayed">РљР»Р°СЃСЃС‹ РЅРёРєР°Рє РЅРµ СЃРІСЏР·Р°РЅРЅС‹Рµ РјРµР¶РґСѓ СЃРѕР±РѕР№ РІ РёРµСЂР°СЂС…РёРё РєР»Р°СЃСЃРѕРІ, РјРѕРіСѓС‚ СЂРµР°Р»РёР·РѕРІС‹РІР°С‚СЊ РѕРґРёРЅ РёРЅС‚РµСЂС„РµР№СЃ.</li>	
 		</ul>
 	</section>	
 	
-	<section class="slide" title="Методы и переменный в интерфесах">
+	<section class="slide" title="РњРµС‚РѕРґС‹ Рё РїРµСЂРµРјРµРЅРЅС‹Р№ РІ РёРЅС‚РµСЂС„РµСЃР°С…">
 		<h2>Use abstract classes and interfaces</h2>
 		<ul>				
-			<li class="delayed">Внутри интерфейса, методы не могут содержать реализации и неявно объявляются как public.</li>
-			<li class="delayed">При реализации, метод также должен быть объявлен как public с тойже самой сигнатурой типа.</li>
+			<li class="delayed">Р’РЅСѓС‚СЂРё РёРЅС‚РµСЂС„РµР№СЃР°, РјРµС‚РѕРґС‹ РЅРµ РјРѕРіСѓС‚ СЃРѕРґРµСЂР¶Р°С‚СЊ СЂРµР°Р»РёР·Р°С†РёРё Рё РЅРµСЏРІРЅРѕ РѕР±СЉСЏРІР»СЏСЋС‚СЃСЏ РєР°Рє public.</li>
+			<li class="delayed">РџСЂРё СЂРµР°Р»РёР·Р°С†РёРё, РјРµС‚РѕРґ С‚Р°РєР¶Рµ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅ РєР°Рє public СЃ С‚РѕР№Р¶Рµ СЃР°РјРѕР№ СЃРёРіРЅР°С‚СѓСЂРѕР№ С‚РёРїР°.</li>
 		</ul>
 		<pre class="delayed"><code lang="java">interface Shape {
 	void Draw(); // public by default
@@ -427,11 +427,11 @@ class Circle implements Shape {
 }</code></pre>        
 	</section>
     
-	<section class="slide" title="Методы и переменный в интерфесах">
+	<section class="slide" title="РњРµС‚РѕРґС‹ Рё РїРµСЂРµРјРµРЅРЅС‹Р№ РІ РёРЅС‚РµСЂС„РµСЃР°С…">
 		<h2>Use abstract classes and interfaces</h2>	
 		<!-- <p></p> -->
 		<ul>				
-			<li class="delayed">Внутри интерфеса могут быть объявлены неизменяемые переменные (final + static).</li>
+			<li class="delayed">Р’РЅСѓС‚СЂРё РёРЅС‚РµСЂС„РµСЃР° РјРѕРіСѓС‚ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅС‹ РЅРµРёР·РјРµРЅСЏРµРјС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ (final + static).</li>
 		</ul>
 		<pre class="delayed"><code lang="java">public interface CarConstants {
 
@@ -441,11 +441,11 @@ class Circle implements Shape {
 }</code></pre>          
 	</section> 
      
-	<section class="slide" title="Методы и переменный в интерфесах">
+	<section class="slide" title="РњРµС‚РѕРґС‹ Рё РїРµСЂРµРјРµРЅРЅС‹Р№ РІ РёРЅС‚РµСЂС„РµСЃР°С…">
 		<h2>Use abstract classes and interfaces</h2>	
 		<!-- <p></p> -->
 		<ul>				
-			<li class="delayed">Переменные можно объявлять с типом интерфейса, для обращения к нескольким реализация интерфеса.</li>
+			<li class="delayed">РџРµСЂРµРјРµРЅРЅС‹Рµ РјРѕР¶РЅРѕ РѕР±СЉСЏРІР»СЏС‚СЊ СЃ С‚РёРїРѕРј РёРЅС‚РµСЂС„РµР№СЃР°, РґР»СЏ РѕР±СЂР°С‰РµРЅРёСЏ Рє РЅРµСЃРєРѕР»СЊРєРёРј СЂРµР°Р»РёР·Р°С†РёСЏ РёРЅС‚РµСЂС„РµСЃР°.</li>
 		</ul>
 		<pre class="delayed"><code lang="java">interface IBox {
 	public void setSize(int size);
@@ -460,25 +460,25 @@ public class Rectangle implements IBox {
 }</code></pre>        
 	</section>
 	
-	<section class="slide" title="Абстрактные классы">
+	<section class="slide" title="РђР±СЃС‚СЂР°РєС‚РЅС‹Рµ РєР»Р°СЃСЃС‹">
 		<h2>Use abstract classes and interfaces</h2>	
 		<!-- <p></p> -->
 		<ul>		
-			<li class="delayed">Если класс содержит интерфейс, но не полностью реализует определенные им методы, он должен быть объявлен как <code>abstract</code>.</li>					
-			<li class="delayed">Абстрактный класс не может содержать объекты.</li>		
-			<li class="delayed">Абстрактный класс не может быть создан с помощью оператора <code>new</code>.</li>		
-			<li class="delayed">Возможно создание объектной ссылки на абстрактный класс, также как и на интерфес.</li>	
+			<li class="delayed">Р•СЃР»Рё РєР»Р°СЃСЃ СЃРѕРґРµСЂР¶РёС‚ РёРЅС‚РµСЂС„РµР№СЃ, РЅРѕ РЅРµ РїРѕР»РЅРѕСЃС‚СЊСЋ СЂРµР°Р»РёР·СѓРµС‚ РѕРїСЂРµРґРµР»РµРЅРЅС‹Рµ РёРј РјРµС‚РѕРґС‹, РѕРЅ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅ РєР°Рє <code>abstract</code>.</li>					
+			<li class="delayed">РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ РЅРµ РјРѕР¶РµС‚ СЃРѕРґРµСЂР¶Р°С‚СЊ РѕР±СЉРµРєС‚С‹.</li>		
+			<li class="delayed">РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ СЃРѕР·РґР°РЅ СЃ РїРѕРјРѕС‰СЊСЋ РѕРїРµСЂР°С‚РѕСЂР° <code>new</code>.</li>		
+			<li class="delayed">Р’РѕР·РјРѕР¶РЅРѕ СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚РЅРѕР№ СЃСЃС‹Р»РєРё РЅР° Р°Р±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ, С‚Р°РєР¶Рµ РєР°Рє Рё РЅР° РёРЅС‚РµСЂС„РµСЃ.</li>	
 		</ul>
 	</section>	
 
-	<section class="slide" title="Абстрактные методы">
+	<section class="slide" title="РђР±СЃС‚СЂР°РєС‚РЅС‹Рµ РјРµС‚РѕРґС‹">
 		<h2>Use abstract classes and interfaces</h2>	
 		<!-- <p></p> -->
 		<ul>		
-			<li class="delayed">Если класс имеет абстрактные методы, он также должен быть объявлен как <code>abstract</code>.</li>
-			<li class="delayed">Абстрактный метод обязательно должен быть переопределен в потомке.</li>
-			<li class="delayed">Абстрактный класс может содержать не абстрактные методы, которые можно и не переопределять.</li>
-			<li class="delayed">В абстрактном классе нельзя объявить абстрактные конструкторы или абстрактные статические методы.</li>
+			<li class="delayed">Р•СЃР»Рё РєР»Р°СЃСЃ РёРјРµРµС‚ Р°Р±СЃС‚СЂР°РєС‚РЅС‹Рµ РјРµС‚РѕРґС‹, РѕРЅ С‚Р°РєР¶Рµ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅ РєР°Рє <code>abstract</code>.</li>
+			<li class="delayed">РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РјРµС‚РѕРґ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅ РІ РїРѕС‚РѕРјРєРµ.</li>
+			<li class="delayed">РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ РјРѕР¶РµС‚ СЃРѕРґРµСЂР¶Р°С‚СЊ РЅРµ Р°Р±СЃС‚СЂР°РєС‚РЅС‹Рµ РјРµС‚РѕРґС‹, РєРѕС‚РѕСЂС‹Рµ РјРѕР¶РЅРѕ Рё РЅРµ РїРµСЂРµРѕРїСЂРµРґРµР»СЏС‚СЊ.</li>
+			<li class="delayed">Р’ Р°Р±СЃС‚СЂР°РєС‚РЅРѕРј РєР»Р°СЃСЃРµ РЅРµР»СЊР·СЏ РѕР±СЉСЏРІРёС‚СЊ Р°Р±СЃС‚СЂР°РєС‚РЅС‹Рµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹ РёР»Рё Р°Р±СЃС‚СЂР°РєС‚РЅС‹Рµ СЃС‚Р°С‚РёС‡РµСЃРєРёРµ РјРµС‚РѕРґС‹.</li>
 		</ul>
 	</section>	
 	
@@ -495,9 +495,9 @@ public class Rectangle implements IBox {
 	<section class="slide" title="">
 		<h2>Exceptions</h2>	
 		<ul>
-			<li class="">Исключением является событием, которое происходит во время выполнения программы и нарушает нормальный ход программы.</li>
-			<li class="delayed">Исключение - это ошибка времени исполнения.</li>
-			<li class="delayed">Любое исключение не перехваченное программой, будет обработано стандартным обаботчиком, программа будет прервана.</li>			
+			<li class="">РСЃРєР»СЋС‡РµРЅРёРµРј СЏРІР»СЏРµС‚СЃСЏ СЃРѕР±С‹С‚РёРµРј, РєРѕС‚РѕСЂРѕРµ РїСЂРѕРёСЃС…РѕРґРёС‚ РІРѕ РІСЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹ Рё РЅР°СЂСѓС€Р°РµС‚ РЅРѕСЂРјР°Р»СЊРЅС‹Р№ С…РѕРґ РїСЂРѕРіСЂР°РјРјС‹.</li>
+			<li class="delayed">РСЃРєР»СЋС‡РµРЅРёРµ - СЌС‚Рѕ РѕС€РёР±РєР° РІСЂРµРјРµРЅРё РёСЃРїРѕР»РЅРµРЅРёСЏ.</li>
+			<li class="delayed">Р›СЋР±РѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ РЅРµ РїРµСЂРµС…РІР°С‡РµРЅРЅРѕРµ РїСЂРѕРіСЂР°РјРјРѕР№, Р±СѓРґРµС‚ РѕР±СЂР°Р±РѕС‚Р°РЅРѕ СЃС‚Р°РЅРґР°СЂС‚РЅС‹Рј РѕР±Р°Р±РѕС‚С‡РёРєРѕРј, РїСЂРѕРіСЂР°РјРјР° Р±СѓРґРµС‚ РїСЂРµСЂРІР°РЅР°.</li>			
 		</ul>		
 	</section>	
 	
@@ -512,7 +512,7 @@ public class Rectangle implements IBox {
 	<section class="slide" title="Handling Exceptions">
 		<h2>Describe what exceptions are used for in Java</h2>
 		<ul>
-			<li class="">Исключения могут создаваться системой времени выполнения Java либо могут быть созданы вручную.</li>
+			<li class="">РСЃРєР»СЋС‡РµРЅРёСЏ РјРѕРіСѓС‚ СЃРѕР·РґР°РІР°С‚СЊСЃСЏ СЃРёСЃС‚РµРјРѕР№ РІСЂРµРјРµРЅРё РІС‹РїРѕР»РЅРµРЅРёСЏ Java Р»РёР±Рѕ РјРѕРіСѓС‚ Р±С‹С‚СЊ СЃРѕР·РґР°РЅС‹ РІСЂСѓС‡РЅСѓСЋ.</li>
 			<li class="delayed"></li>
 			<li class="delayed"></li>			
 		</ul>
@@ -521,14 +521,14 @@ public class Rectangle implements IBox {
 	<section class="slide" title="Handling Exceptions">
 		<h2>Invoke a method that throws an exception</h2>
 		<ul>
-			<li class=""><a href="#throws">Конструкция <code>throws</code> перечисляет типы исключений, которые метод может передавать.</a></li>
-			<li class="delayed"><a href="#throw">Передать исключение по команде <code>throw</code> можно только если в определении функции будет указано это исключение после ключевого слова <code>throws</code>.</a></li>
-			<li class="delayed"><a href="#throw_avoid">Исключение может быть объявлено в описании функции, но не вызываться в ее теле.</a></li>
+			<li class=""><a href="#throws">РљРѕРЅСЃС‚СЂСѓРєС†РёСЏ <code>throws</code> РїРµСЂРµС‡РёСЃР»СЏРµС‚ С‚РёРїС‹ РёСЃРєР»СЋС‡РµРЅРёР№, РєРѕС‚РѕСЂС‹Рµ РјРµС‚РѕРґ РјРѕР¶РµС‚ РїРµСЂРµРґР°РІР°С‚СЊ.</a></li>
+			<li class="delayed"><a href="#throw">РџРµСЂРµРґР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ РїРѕ РєРѕРјР°РЅРґРµ <code>throw</code> РјРѕР¶РЅРѕ С‚РѕР»СЊРєРѕ РµСЃР»Рё РІ РѕРїСЂРµРґРµР»РµРЅРёРё С„СѓРЅРєС†РёРё Р±СѓРґРµС‚ СѓРєР°Р·Р°РЅРѕ СЌС‚Рѕ РёСЃРєР»СЋС‡РµРЅРёРµ РїРѕСЃР»Рµ РєР»СЋС‡РµРІРѕРіРѕ СЃР»РѕРІР° <code>throws</code>.</a></li>
+			<li class="delayed"><a href="#throw_avoid">РСЃРєР»СЋС‡РµРЅРёРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅРѕ РІ РѕРїРёСЃР°РЅРёРё С„СѓРЅРєС†РёРё, РЅРѕ РЅРµ РІС‹Р·С‹РІР°С‚СЊСЃСЏ РІ РµРµ С‚РµР»Рµ.</a></li>
 		</ul>
 	</section>
 	
 		<section id="throws" class="slide" title="Invoke a method that throws an exception">
-			<h3>Конструкция <code>throws</code> перечисляет типы исключений, которые метод может передавать.</h3>
+			<h3>РљРѕРЅСЃС‚СЂСѓРєС†РёСЏ <code>throws</code> РїРµСЂРµС‡РёСЃР»СЏРµС‚ С‚РёРїС‹ РёСЃРєР»СЋС‡РµРЅРёР№, РєРѕС‚РѕСЂС‹Рµ РјРµС‚РѕРґ РјРѕР¶РµС‚ РїРµСЂРµРґР°РІР°С‚СЊ.</h3>
 		<pre><code lang="java">import java.io.IOException;
 import java.text.ParseException;
 
@@ -540,7 +540,7 @@ public class ThrowsExceptionExample {
 		</section>
 		
 		<section id="throw" class="slide" title="Invoke a method that throws an exception">
-			<h3>Любое исключение, которое создается и передается внутри метода, должно быть указано в его описании после ключевого слова <code>throws</code>.</h3>
+			<h3>Р›СЋР±РѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ СЃРѕР·РґР°РµС‚СЃСЏ Рё РїРµСЂРµРґР°РµС‚СЃСЏ РІРЅСѓС‚СЂРё РјРµС‚РѕРґР°, РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ СѓРєР°Р·Р°РЅРѕ РІ РµРіРѕ РѕРїРёСЃР°РЅРёРё РїРѕСЃР»Рµ РєР»СЋС‡РµРІРѕРіРѕ СЃР»РѕРІР° <code>throws</code>.</h3>
 		<pre><code lang="java">public class ThrowExceptionExample {
 	public static void main(String[] args) {
 		//throw new Exception(); // Error: Unhandled exception type Exception
@@ -549,7 +549,7 @@ public class ThrowsExceptionExample {
 		</section>
 
 		<section id="throw_avoid" class="slide" title="Invoke a method that throws an exception">
-			<h3>Исключение может быть объявлено в описании функции, но не вызываться в ее теле.</h3>
+			<h3>РСЃРєР»СЋС‡РµРЅРёРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅРѕ РІ РѕРїРёСЃР°РЅРёРё С„СѓРЅРєС†РёРё, РЅРѕ РЅРµ РІС‹Р·С‹РІР°С‚СЊСЃСЏ РІ РµРµ С‚РµР»Рµ.</h3>
 		<pre><code lang="java">public class AccountExceptionExample {
 	public void withdraw() throws Exception {
 		// no errors
@@ -564,10 +564,10 @@ public class ThrowsExceptionExample {
 	<section class="slide" title="Handling Exceptions">
 		<h3>Recognize common exception classes and categories</h3>	
 		<ul>
-			<li class="">Все типы исключений происходщят от встроенного класса <code>Throwable</code>.</li>
-			<li class="delayed">Далее все исключения делятся на две ветви <code>Exceptions</code>, от которой происходят все пользовательские исключения и <code>Error</code>.</li>
-			<li class="delayed">В классе <code>Exception</code> подкласс <code>RuntimeException</code> исключения являются непроверяемыми и автоматически определяются для программ.</li>
-			<li class="delayed">Исключения определенные классом <code>Error</code> обычно возникают в следствие катастрофических сбоев, которые не могут быть обработаны программой.</li>
+			<li class="">Р’СЃРµ С‚РёРїС‹ РёСЃРєР»СЋС‡РµРЅРёР№ РїСЂРѕРёСЃС…РѕРґС‰СЏС‚ РѕС‚ РІСЃС‚СЂРѕРµРЅРЅРѕРіРѕ РєР»Р°СЃСЃР° <code>Throwable</code>.</li>
+			<li class="delayed">Р”Р°Р»РµРµ РІСЃРµ РёСЃРєР»СЋС‡РµРЅРёСЏ РґРµР»СЏС‚СЃСЏ РЅР° РґРІРµ РІРµС‚РІРё <code>Exceptions</code>, РѕС‚ РєРѕС‚РѕСЂРѕР№ РїСЂРѕРёСЃС…РѕРґСЏС‚ РІСЃРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ РёСЃРєР»СЋС‡РµРЅРёСЏ Рё <code>Error</code>.</li>
+			<li class="delayed">Р’ РєР»Р°СЃСЃРµ <code>Exception</code> РїРѕРґРєР»Р°СЃСЃ <code>RuntimeException</code> РёСЃРєР»СЋС‡РµРЅРёСЏ СЏРІР»СЏСЋС‚СЃСЏ РЅРµРїСЂРѕРІРµСЂСЏРµРјС‹РјРё Рё Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РѕРїСЂРµРґРµР»СЏСЋС‚СЃСЏ РґР»СЏ РїСЂРѕРіСЂР°РјРј.</li>
+			<li class="delayed">РСЃРєР»СЋС‡РµРЅРёСЏ РѕРїСЂРµРґРµР»РµРЅРЅС‹Рµ РєР»Р°СЃСЃРѕРј <code>Error</code> РѕР±С‹С‡РЅРѕ РІРѕР·РЅРёРєР°СЋС‚ РІ СЃР»РµРґСЃС‚РІРёРµ РєР°С‚Р°СЃС‚СЂРѕС„РёС‡РµСЃРєРёС… СЃР±РѕРµРІ, РєРѕС‚РѕСЂС‹Рµ РЅРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РѕР±СЂР°Р±РѕС‚Р°РЅС‹ РїСЂРѕРіСЂР°РјРјРѕР№.</li>
 		</ul>
 	</section>
 	
@@ -621,7 +621,7 @@ public class ThrowsExceptionExample {
 <section id="examples">
 	
 	
-	<section class="slide" id="variable_hiding_1" title="Область видимости">
+	<section class="slide" id="variable_hiding_1" title="РћР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё">
 		<h2>Variables</h2>	
 		<p>A local variable shadows an instance variable.</p>
 					<pre><code lang="java">class TwoScopes {
@@ -639,7 +639,7 @@ public class TwoScopesExamples {
 }</code></pre>
 	</section>
 	
-	<section class="slide" id="variable_hiding_2" title="Область видимости">
+	<section class="slide" id="variable_hiding_2" title="РћР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё">
 		<h2>Variables</h2>	
 		<ul>
 			<li>Instance variable shadows the inherited variable from it's parent classes.
