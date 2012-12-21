@@ -3,226 +3,608 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<title>CSSS: A brief introduction</title>
+	<title>1Z0-803: Oracle Certified Associate, Java SE 7 Programmer</title>
+	
+	<script type="text/javascript" src="l10n.js"></script>
+	<link rel="resource" type="application/l10n" href="l10n.properties" />
 	
 	<link href="slideshow.css" rel="stylesheet" />
 	<link href="theme.css" rel="stylesheet" />
 	<link href="talk.css" rel="stylesheet" />
+	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="prefixfree.min.js"></script>
 </head>
 <body data-duration="10">
 
 <header id="intro" class="slide">
 	<h1>
-		<object data="logo.svg" width="100%" type="image/svg+xml">
-			<img src="logo.png" alt="CSSS: CSS-based SlideShow System" />
-		</object>
+		<code>Java OCAJP</code>
 	</h1>
-	<p class="attribution">By Lea Verou</p>
+	<p class="attribution">By Mikhail Niedre</p>
 </header>
+
+
+<!-- OCAJP topics -->
 <section>
-	<header class="slide">
-		<h1>Introduction</h1>
-	</header>
-	
-	<section class="slide" title="CSSS: Introduction">
-		<h2>What is it?</h2>
-		<p>A simple framework for building presentations with modern web standards</p>
-		<ul>
-			<li class="delayed">An HTML file contains the whole presentation</li>
-			<li class="delayed">Themes as CSS files</li>
-			<li class="delayed">JavaScript handles what CSS can't (keyboard shortcuts etc)</li>
+	<section class="slide" data-l10n-id="section-exam-topics" title="Темы экзамена">
+		<h2 data-l10n-id="exam-topics">Exam Topics</h2>	
+		<ul class="topics">
+			<li><a href="#basics" data-l10n-id="t1-basics">Java Basics</a></li>
+			<li><a href="#variables" data-l10n-id="t2-variables">Declare and initialize variable</a></li>
+			<li><a href="#operators-constructs" data-l10n-id="t3-operators-constructs">Using Operators and Decision Constructs</a></li>
+			<li><a href="#arrays" data-l10n-id="t4-arrays">Creating and Using Arrays</a></li>
+			<li><a href="#loops" data-l10n-id="t5-loops">Using Loop Constructs</a></li>
+			<li><a href="#encapsulation" data-l10n-id="t6-encapsulation">Working with Methods and Encapsulation</a></li>
+			<li><a href="#inheritance" data-l10n-id="t7-inheritance">Working with Inheritance</a></li>
+			<li><a href="#exceptions" data-l10n-id="t8-exceptions">Handling Exceptions</a></li>			
 		</ul>
-	</section>
-	
-	<section class="slide">
-		<h2>History</h2>
-		<ul>
-			<li class="delayed">I had to create a presentation for my talk at <a href="http://front-trends.com">Front Trends 2010</a></li>
-			<li class="delayed">The only web-based presentation systems I knew of didn't fit my needs</li>
-			<li class="delayed">&hellip;so I rolled up my own</li>
-			<li class="delayed">FT2010 attendees asked me to release it</li>
-			<li class="delayed">and here it is! ;-)</li>
-		</ul>
-	</section>
-	
-	<section class="slide" id="navigation">
-		<h2>Navigation</h2>
-		<p>Only through keyboard for now :(</p>
-		<ul>
-			<li>в†’ or в†“ to advance to the next slide or incrementally displayed item</li>
-			<li>в†ђ or в†‘ to go to the previous slide or incrementally displayed item</li>
-			<li>Ctrl* + в†’ or Ctrl* + в†“ to jump to the next slide</li>
-			<li>Ctrl* + в†ђ or Ctrl* + в†‘ to jump to the previous slide</li>
-			<li>Home to go to the first slide, End to go to the last</li>
-			<li>Ctrl* + G to jump to an arbitrary slide (by slide number or identifier)</li>
-		</ul>
-		<p>* Ctrl or Shift actually. Only Shift works in Opera.</p>
-	</section>
+	</section>	
 </section>
 
+
+<!-- Java Basics -->
 <section>
-	<header class="slide">
-		<h1>Features</h1>
-	</header>
+	<header id="basics" class="slide">
+		<h1 data-l10n-id="t1-java-basics">Java Basics</h1>
+	</header>	
 	
-	<section class="slide">
-		<h2>Thumbnail view</h2>
-		<p>Press Ctrl+H (or Shift+H if you're in Opera) now.</p>
-		<p class="delayed">Cool, huh? You can press Ctrl+Shift+H to see all slides (warning: can be slow!)</p>
-	</section>
-	
-	<section class="slide">
-		<h2>Timer</h2>
+	<section class="slide" title="Область видимости">
+		<h2>Define the scope of variables</h2>	
 		<ul>
-			<li>Timer in the form of a progress bar on the top</li>
-			<li>Define the talk duration with the attribute <code>data-duration</code> on the <code>body</code></li>
-			<li>Style the timer and the end state with the selectors <code>#timer</code> and <code>#timer.end</code> respectively.</li>
+			<li>Different kinds of variables have different scopes.</li>
+			<li class="delayed"><a href="#fields_variables">В Java имеется две основные области видимости для переменных - определяемые классом и методом (fields and variables).</a></li>
+			<li class="delayed"><a href="#variable_hiding_1">A local variable shadows an instance variable.</a></li>
+			<li class="delayed"><a href="#variable_hiding_2">Instance variable shadows the inherited variable from it's parent classes.</a></li>			
+			<li class="delayed">Instance variables are not <a href="#overriding_hiding" title="overriding hiding example">overridden</a>, they are <a href="#overriding_hiding" title="overriding hiding example">hidden</a>.</li>
 		</ul>
 	</section>
 	
-	<section class="slide">
-		<h2>Presenter view</h2>
-		<p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).</p>
-		<p class="presenter-notes">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	
-	<section class="slide">
-		<style scoped>
-			h2 {
-				font-size: 200%;
-				font-weight: bold;
-			}
-		</style>
-		<h2><code>&lt;style scoped /&gt;</code></h2>
-		<p>You can use the HTML5 <code>scoped</code> attribute on style elements in slides, to only style the current slide or inside sections that include multiple slides to style all of them and nothing else.</p>
-		<p>For example, inspect this slide and then run <code>$$('style[scoped]')[0].sheet.cssRules[0].selectorText</code> in the console to see how the original selector gets changed.</p>
-	</section>
-	
-	<section class="slide">
-		<h2>More features</h2>
+	<section class="slide" id="fields_variables" title="Переменные">
+		<h2>Variables</h2>
+		<p>The Java programming language defines the following kinds of variables:</p>		
 		<ul>
-			<li class="delayed">IDs are dynamically assigned by JavaScript&hellip;</li>
-			<li class="delayed">&hellip;but you can also assign your own, bringing the best of both worlds</li>
-			<li class="delayed">Incremental display of slide contents (just add <code>class="delayed"</code>)</li>
-			<li class="delayed">Slide scaling based on window size (size everything you want to be scalable in ems)</li>
-			<li class="delayed">Document.title changing according to slide title (fetched either from the <code>title</code> attribute or the slide's heading)</li>
-		</ul>
-	</section>
-	
-	<section class="slide">
-		<h2>Drawbacks</h2>
-		<ul>
-			<li>Only supports modern browsers. Why?
+		    <li class="delayed">fields:
+				<ul>			
+					<li><a href="#instance_variables_1" title="Instance Variables">Instance Variables</a> (Non-Static Fields)</li>
+					<li><a href="#class_variables" title="Class Variables">Class Variables</a> (Static Fields)</li>
+				</ul> 
+			</li>
+			<li class="delayed">variables:
 				<ul>
-					<li>More lightweight</li>
-					<li>Easier to understand code</li>	
-					<li>It's a presentation, so the environment is controlled anyway</li>
+					<li><a href="#local_variables" title="Local Variables">Local Variables</a></li>
+					<li><a href="#method_parameters" title="Method Parameters">Parameters</a></li>
 				</ul>
 			</li>
-			<li>No mouse click to advance to the next slide. I consider it annoying.</li>
-			<li>Doesn't work in mobile :(</li>
+		</ul>
+		<pre class="delayed"><code lang="java">public class Variables {
+	private int instance_var = 1;
+	public static int CLASS_VAR = 2;
+	public void method(String[] parameters) { // 4
+		int local_var = 3;
+	}
+}</code></pre>
+	</section>
+	
+	<section class="slide" id="instance_variables_1" title="Переменные экземпляра класса">
+		<h2>Instance Variables</h2>	
+		<ul>
+		    <li class="delayed">Переменные экземпляра объявляются в классе, но вне любого метода конструктора или блока.</li>
+			<li class="delayed">.</li>
+			<li class="delayed">.</li>
+			<li class="delayed">.</li>
+		</ul>        
+	</section>
+	
+	<section class="slide" id="instance_variables_2" title="Переменные экземпляра класса">
+		<h2>Instance Variables</h2>	
+		<ul>
+		    <li class="delayed">Instance Variable может быть доступна только в пределах существования экземпляра класса.</li>
+			<li class="delayed">Instance Variable может явно содержать модификатор доступа.</li>
+			<li class="delayed">Instance Variable вызывается через обращение к объекту класса.</li>
+			<li class="delayed">Все Instance Variables которым небыли присвоены явные значения, автоматически инициализуются значениями по умолчанию перед вызовом конструктора.</li>
+		</ul>
+<pre class="delayed"><code lang="java">public class InstanceVariables {	
+	private int i;	
+	public void print() { System.out.println(i); }
+	public static void main(String[] args) {
+		new InstanceVariables().print(); // 0
+	}
+}</code></pre>        
+	</section>
+	
+	<section class="slide" id="class_variables" title="Переменные класса">
+		<h2>Class Variables</h2>	
+		<ul>
+		    <li class="delayed">Cтатические переменные инициализируются в момент загрузки класса и уничтожаются, когда программа останавливается.</li>
+			<li class="delayed">Cтатические переменные едины для всех экземляров класса.</li>
 		</ul>
 	</section>
+	
+	
+	<section class="slide" id="constants" title="Константы">
+		<h2>Constants</h2>	
+		<ul>
+		    <li class="delayed">Константы в Java это переменные класса объявленные как public/private, final и static.</li>
+			<li class="delayed">Константы никогда не изменяют начального состояния.</li>
+			<li class="delayed">Константы принято именовать в верхнем регистре.</li>
+		</ul>
+<pre class="delayed"><code lang="java">class Employee{
+   // DEPARTMENT is a constant
+   public static final String DEPARTMENT = "Development";
+}</code></pre>
+	</section>	
+    
+	
+	<section class="slide" id="local_variables" title="Локальные переменные">
+		<h2>Local Variables</h2>	
+		<ul>
+		    <li class="delayed">Локальные переменные не инициализуются значениями по умолчанию автоматически.</li>
+			<li class="delayed">Локальные переменные должны быть явно инициализированы перед использованием, иначе будет ошибка компиляции.</li>
+			<li class="delayed">Access modifiers cannot be used for local variables.</li>
+			<li class="delayed">Local variables are visible only within the declared method, constructor or block.</li>
+		</ul>
+<pre class="delayed"><code lang="java">public int wrongLocalInit(int p) {
+    int i; // right way: // int i = 0;
+    if (p < 5)
+        i += 5; // The local variable i may not have been initialized
+    return i;
+}</code></pre>        
+	</section>
+    
+	<section class="slide" id="method_parameters" title="Параметры метода">
+		<h2>Method Parameters</h2>	
+		<ul>
+		    <li class="delayed"></li>
+			<li class="delayed"></li>
+		</ul>
+	</section>
+	
+	<section class="slide" title="Область видимости">
+		<h2>Define the scope of variables</h2>	
+		<ul>
+			<li>Область видимости определяет продолжительность существования переменных.</li>
+			<li class="delayed">Java допускает объявление переменных внутри любого блока (в фигурных скобках).</li>
+			<li class="delayed">Правила обработки области видимости - основы инкапсуляции.</li>						
+			<li class="delayed">Области видимости могут быть вложенными.</li>
+			<li class="delayed">Объекты объявленный во внешней области, будут видны коду во внутренней области.</li>			
+		</ul>
+	</section>
+	
+	<section class="slide" title="Область видимости">
+		<h2>Define the scope of variables</h2>	
+		<ul>		
+			<li class="delayed">Входные параметры метода также включаются в его область видимости.</li>
+			<li class="delayed">Переменные объявленные внутри области видимости, не доступны внешнему коду.</li>
+			<li class="delayed">Внутри блока переменные можно объявлять в любом месте, но доступными они становятся только после объявления.</li>
+			<li class="delayed">Продолжительность существования переменной ограничена ее областью видимости.</li>
+			<li class="delayed">Во внутреннем блоке нельзя объявить переменную с тем же именем что и во внешнем.</li>			
+		</ul>
+	</section>	
+	
+	<section class="slide" title="Класс в Java">
+		<h2>Define the structure of a Java class</h2>		
+		<!-- <p>Класс - центральное понятие в Java.</p> -->
+		<ul>
+		    <li>Класс - центральное понятие в Java.</li>
+			<li class="delayed">Класс используется для создания объектов.</li>
+			<li class="delayed">Класс определяет новый тип данных.</li>
+			<li class="delayed">Класс - это <code>шаблон</code> объекта, а объект - это <code>экземпляр</code> класса.</li>
+			<li class="delayed">Код класса определяет интерфейс к его данным.</li>
+		</ul>
+	</section>
+	
+	<section class="slide" title="объявление классов">
+		<h2>Define the structure of a Java class</h2>	
+		<ul>
+			<li class="delayed">Для объявления класса служит ключевое слово <code>class</code>.</li>
+			<li class="delayed">Класс может не содержать метод <code>main()</code>.</li>
+			<li class="delayed">Для доступа к переменным применяется оператор точка <code>.</code>.</li>
+			<li class="delayed">Для создания объекта класса служит оператор <code>new</code>.</li>		
+		</ul>
+	</section>	
+	
+	<section class="slide" title="объявление объектов">
+		<h2>Define the structure of a Java class</h2>	
+		<ul>	
+			<li class="delayed">Для Java все объекты классов должны создаваться динамически, используя оператор <code>new</code>.</li>			
+			<li class="delayed">Ссылка на объект класса содержит адрес объекта в памяти и хранится в переменной.</li>			
+		</ul>
+		<pre class="delayed"><code lang="java">Box obj; //объявление ссылки на объект
+// obj = null;
+obj = new Box(); // резервирование памяти для объекта
+// и присвоение переменной obj ссылки на этот объект
+// Box() - конструктор класса Box</code></pre>
+	</section>	
+	
+	<section class="slide" title="Java Basics">
+		<h2>Create executable Java applications with a main method</h2>	
+		<p></p>
+		<pre><code lang="java"></code></pre>
+	</section>
+	
+	<section class="slide" title="Java Basics">
+		<h2>Import other Java packages to make them accessible in your code</h2>	
+		<ul>	
+			<li class="">A package is a namespace that organizes a set of related classes and interfaces.</li>			
+			<li class="delayed">The names of your types won't conflict with the type names in other packages because the package creates a new namespace.</li>			
+		</ul>
+	</section>
+
+	<section class="slide" title="Java Basics">
+		<h2>Working With Java Data Types</h2>	
+		<p></p>
+		<pre><code lang="java"></code></pre>
+	</section>	
+	
 </section>
 
+
+<!-- Declare and initialize variable -->
 <section>
-	<header class="slide">
-		<h1>Plugins</h1>
+	<header id="variables" class="slide">
+		<h1 data-l10n-id="t2-variables">Declare and initialize variable</h1>
 	</header>
 	
-	<section class="slide">
-		<h2>Plugin: CSS Snippets</h2>
-		<pre>new CSSSnippet(document.getElementById('snippet'));</pre>
+</section>
+
+
+<!-- Declare and initialize variable -->
+<section>
+	<header id="operators-constructs" class="slide">
+		<h1 data-l10n-id="t3-operators-constructs">Using Operators and Decision Constructs</h1>
+	</header>
+	
+</section>
+
+
+<!-- 
+Creating and Using Arrays 
+-->
+<section>
+	<header id="arrays" class="slide">
+		<h1 data-l10n-id="t4-arrays-h">Arrays</h1>
+	</header>
+	
+	<section class="slide" data-l10n-id="t4-arrays" title="Creating and Using Arrays">
+		<h2>Declare, instantiate, initialize and use arrays</h2>
 		<ul>
-			<li>Dynamically edit CSS and reflect the results in any element's style
-				<ul>
-					<li>Which one? Specify a selector with the <code>data-subject</code> attribute or leave blank for the slide to be the subject</li>
-				</ul>
-			<li>Automatically prefixes CSS3 properties/values, when needed
-				<ul>
-					<li>Also does it with the style attribute (statically) if the element is not a text field (doesn't work in IE and Firefox 3.6)</li>
-				</ul>
-			</li>
-			<li>Textarea automatically adjusts rows/font-size on line break (use class <code>dont-adjust</code> to turn off)</li>
+			<li class=""><a href="#arrays_object">An array is a container object that holds a fixed number of values of a single type.</a></li>
+			<li class="delayed"><a href="#arrays_length">The length of an array is established when the array is created. After creation, its length is fixed.</a></li>
+			<li class="delayed"><a href="#arrays_ids">Each element in an array is accessed by its numerical index.</a></li>	
+			<li class="delayed"><a href="#arrays_default_values">The elements of arrays are always set to default values wherever the array is created.</a> <a href="#default_values">(default values)</a></li>				
+		</ul>
+	</section>
+
+	<section class="slide" id="arrays_object" title="Array as object">
+		<h2>Arrays</h2>
+		<p>An array is a container object that holds a fixed number of values of a single type</p>		
+		<pre><code lang="java">// declares an array of integers
+int[] anArray;
+// this form is discouraged
+float anArrayOfFloats[];
+
+// will be created an eleven objects
+String[] s = new String[10];</code></pre>
+	</section>
+
+	<section class="slide" id="arrays_length" title="Array as object">
+		<h2>Arrays</h2>
+		<p>The length of an array is established when the array is created. After creation, its length is fixed.</p>		
+		<pre><code lang="java">// allocates memory for 10 integers
+int[] anArray = new int[10];
+// Note that arrays have a length field not a length() method.
+for(int j = 0; j < anArray.length; j++) {
+	anArray[j] = j;
+}</code></pre>
+	</section>
+
+	<section class="slide" id="arrays_ids" title="Index of array element">
+		<h2>Arrays</h2>
+		<p>Each element in an array is accessed by its numerical index.</p>		
+		<pre><code lang="java">int i = 0;
+long j = 0;
+String s[] = { "a", "b", "c", "d" }
+String c1[] = s[i]; // ok
+String c2[] = s[j]; // compile error!
+</code></pre>
+	</section>	
+
+	<section id="default_values" class="slide" title="Primitive data types default values">
+		
+		<h2>Data types default values</h2>	
+		<table>
+		  <tr>
+		      <td>Data Type</td>
+		      <td>Default Value (for fields)</td>
+		  </tr>
+		  <tr>
+		      <td>byte</td>
+		      <td>0</td>
+		  </tr>
+		  <tr>
+		      <td>short</td>
+		      <td>0</td>
+		  </tr>
+		  <tr>
+		      <td>int</td>
+		      <td>0</td>
+		  </tr>
+		  <tr>
+		      <td>long</td>
+		      <td>0L</td>
+		  </tr>
+		  <tr>
+		      <td>float</td>
+		      <td>0.0f</td>
+		  </tr>
+		  <tr>
+		      <td>double</td>
+		      <td>0.0d</td>
+		  </tr>
+		  <tr>
+		      <td>char</td>
+		      <td>'\u0000'</td>
+		  </tr>
+		  <tr>
+		      <td>String (or any object)</td>
+		      <td>null</td>
+		  </tr>
+		  <tr>
+		      <td>boolean</td>
+		      <td>false</td>
+		  </tr>		  
+		</table>
+	</section>	
+	
+</section>
+
+
+
+<!-- Using Operators and Decision Constructs -->
+<section>
+	<header id="loops" class="slide">
+		<h1 data-l10n-id="t5-loops">Using Loop Constructs</h1>
+	</header>
+	
+</section>
+
+
+
+
+
+<!-- Working with Methods and Encapsulation -->
+<section>
+	<header id="encapsulation" class="slide">
+		<h1 data-l10n-id="t6-encapsulation-h">Working with Methods and Encapsulation</h1>
+	</header>
+	
+</section>
+
+
+	
+<!-- Working with Inheritance -->
+<section>
+	<header id="inheritance" class="slide">
+		<h1 data-l10n-id="t7-inheritance-h">Working with Inheritance</h1>
+	</header>
+	
+	<section class="slide" title="Интерфейсы">
+		<h2>Use abstract classes and interfaces</h2>	
+		<ul>
+			<li class="delayed">Интерфейсы сообщают классу <code>что</code> он должен делать, но не то <code>как</code> он это будет делать.</li>
+			<li class="delayed">Интерфейсы могут наследовать множество интерфейсов (<code>implements</code>), но не могут наследовать классы.</li>			
+			<li class="delayed">Интерфейсы предназначены для поддержки динамического разрешения методов во время выполнения.</li>
+			<li class="delayed">В файле должен быть объявлен только один public интерфейс.</li>
 		</ul>
 	</section>
 	
-	<section class="slide">
-		<h2>CSS Snippets demo</h2>
-		<p>Edit the following CSS code:</p>
-		<textarea class="snippet">background-color:red;
-background-image: linear-gradient(red, #600)</textarea>
-	</section>
+	<section class="slide" title="Классы реализующие интерфесы">
+		<h2>Use abstract classes and interfaces</h2>	
+		<!-- <p></p> -->
+		<ul>
+			<li class="delayed">Вложенный интерфейс может быть объявлен как public, private или protected..</li>
+			
+			<li class="delayed">Класс может наследовать только один класс (<code>extends</code>), но реализовывать множество интерфейсов (<code>implements</code>).</li>
+			<li class="delayed">Каждый класс, который включает в себя интерфейс, должен реализовать все его методы.</li>
+			<li class="delayed">Классы никак не связанные между собой в иерархии классов, могут реализовывать один интерфейс.</li>	
+		</ul>
+	</section>	
 	
-	<section class="slide" id="animation-demo">
-		<h2>CSS Snippets: raw CSS</h2>
-		<textarea class="snippet" data-raw>@keyframes rainbow {
-	from, to { background: red }
-	16% { background: yellow }
-	33% { background: green }
-	50% { background: aqua }
-	66% { background: blue }
-	83% { background: fuchsia }
+	<section class="slide" title="Методы и переменный в интерфесах">
+		<h2>Use abstract classes and interfaces</h2>
+		<ul>				
+			<li class="delayed">Внутри интерфейса, методы не могут содержать реализации и неявно объявляются как public.</li>
+			<li class="delayed">При реализации, метод также должен быть объявлен как public с тойже самой сигнатурой типа.</li>
+		</ul>
+		<pre class="delayed"><code lang="java">interface Shape {
+	void Draw(); // public by default
 }
+class Circle implements Shape {
+	void Draw() {// Error: by default method not public 
+// Cannot reduce the visibility of the inherited method from Shape
+		System.out.println("Drawing Circle here");
+	}
+}</code></pre>        
+	</section>
+    
+	<section class="slide" title="Методы и переменный в интерфесах">
+		<h2>Use abstract classes and interfaces</h2>	
+		<!-- <p></p> -->
+		<ul>				
+			<li class="delayed">Внутри интерфеса могут быть объявлены неизменяемые переменные (final + static).</li>
+		</ul>
+		<pre class="delayed"><code lang="java">public interface CarConstants {
 
-#animation-demo { animation: 30s rainbow infinite; }</textarea>
-	</section>
-	
-	<section class="slide">
-		<h2>Plugin: CSS Controls</h2>
-		<ul>
-			<li>Use sliders and other controls to adjust CSS values
-				<ul>
-					<li>Which one? Specify a selector with the <code>data-subject</code> attribute or leave blank for the slide to be the subject</li>
-					<li>Specify style with <code>data-style</code> (use <code>{value}</code> where the result will be)</li>
-				</ul>
-			<li>Automatically prefixes CSS3 properties/values, when needed</li>
+      static final String ENGINE = "mechanical"; // public by default
+      static public final String WHEEL  = "round";
+      
+}</code></pre>          
+	</section> 
+     
+	<section class="slide" title="Методы и переменный в интерфесах">
+		<h2>Use abstract classes and interfaces</h2>	
+		<!-- <p></p> -->
+		<ul>				
+			<li class="delayed">Переменные можно объявлять с типом интерфейса, для обращения к нескольким реализация интерфеса.</li>
 		</ul>
+		<pre class="delayed"><code lang="java">interface IBox {
+	public void setSize(int size);
+}
+public class Rectangle implements IBox {
+	private int size;
+	public void setSize(int size) { this.size = size; }
+	public static void main(String[] args) {
+        // myBox contains the methods/fields ONLY from IBox
+		IBox myBox = new Rectangle(); myBox.setSize(10);
+	}
+}</code></pre>        
 	</section>
 	
-	<section class="slide" id="css-controls-demo">
-		<h2>CSS Controls demo</h2>
-		<label>Slide lightness: 
-			<input type="range" min="0" max="255" value="128" data-style="background-color:rgb({value}, {value}, {value});" class="css-control" />
-		</label>
-		<label>
-			border-width:
-			<input type="number" min="0" max="60" value="30" data-style="border-width: {value}px;" class="css-control" size="5" />
-		</label>
-		<label>
-			font-family:
-			<select data-style="font-family: {value};" class="css-control">
-				<option selected>sans-serif</option>
-				<option>Georgia, serif</option>
-				<option>Consolas, monospace</option>
-				<option>'Trebuchet MS', sans-serif</option>
-			</select>
-		</label>
-	</section>
-	
-	<section class="slide">
-		<h2>Plugin: Code highlight</h2>
-		<ul>
-			<li>Syntax highlighting for every <code>&lt;code&gt;</code> element with a <code>lang</code> attribute.</li>
-			<li>Only highlights when the slide becomes active, for performance</li>
-			<li>Currently only supports JavaScript, but it's easy to add any language</li>
-			<li>Styling done through easy to understand classes like <code>.string</code> or <code>.comment</code></li>
+	<section class="slide" title="Абстрактные классы">
+		<h2>Use abstract classes and interfaces</h2>	
+		<!-- <p></p> -->
+		<ul>		
+			<li class="delayed">Если класс содержит интерфейс, но не полностью реализует определенные им методы, он должен быть объявлен как <code>abstract</code>.</li>					
+			<li class="delayed">Абстрактный класс не может содержать объекты.</li>		
+			<li class="delayed">Абстрактный класс не может быть создан с помощью оператора <code>new</code>.</li>		
+			<li class="delayed">Возможно создание объектной ссылки на абстрактный класс, также как и на интерфес.</li>	
 		</ul>
-	</section>
+	</section>	
+
+	<section class="slide" title="Абстрактные методы">
+		<h2>Use abstract classes and interfaces</h2>	
+		<!-- <p></p> -->
+		<ul>		
+			<li class="delayed">Если класс имеет абстрактные методы, он также должен быть объявлен как <code>abstract</code>.</li>
+			<li class="delayed">Абстрактный метод обязательно должен быть переопределен в потомке.</li>
+			<li class="delayed">Абстрактный класс может содержать не абстрактные методы, которые можно и не переопределять.</li>
+			<li class="delayed">В абстрактном классе нельзя объявить абстрактные конструкторы или абстрактные статические методы.</li>
+		</ul>
+	</section>	
 	
-	<section class="slide">
-		<h2>Code highlight example</h2>
-		<pre><code lang="javascript">// Comment
-document.addEventListener('DOMAttrModified',function(e) {
-  var node = e.target, attr = e.attrName;
-  if(/^input$/i.test(node.nodeName) 
-    &amp;&amp; (attr === 'placeholder' || attr === 'value')
-    || foo > 5)
-      Placeholder.update(node);
-}, false);</code></pre>
-	</section>
 </section>
+
+
+
+<!-- Handling Exceptions -->
+<section>
+	<header id="exceptions" class="slide">
+		<h1 data-l10n-id="t8-exceptions-h">Handling Exceptions</h1>
+	</header>
+	
+	<section class="slide" title="">
+		<h2>Exceptions</h2>	
+		<ul>
+			<li class="">Исключением является событием, которое происходит во время выполнения программы и нарушает нормальный ход программы.</li>
+			<li class="delayed">Исключение - это ошибка времени исполнения.</li>
+			<li class="delayed">Любое исключение не перехваченное программой, будет обработано стандартным обаботчиком, программа будет прервана.</li>			
+		</ul>		
+	</section>	
+	
+	<section class="slide" title="Handling Exceptions">
+		<h2>Differentiate among checked exceptions, RuntimeExceptions and Errors</h2>	
+	</section>
+	
+	<section class="slide" title="Handling Exceptions">
+		<h2>Create a try-catch block and determine how exceptions alter normal program flow</h2>	
+	</section> 
+		
+	<section class="slide" title="Handling Exceptions">
+		<h2>Describe what exceptions are used for in Java</h2>
+		<ul>
+			<li class="">Исключения могут создаваться системой времени выполнения Java либо могут быть созданы вручную.</li>
+			<li class="delayed"></li>
+			<li class="delayed"></li>			
+		</ul>
+	</section> 
+	
+	<section class="slide" title="Handling Exceptions">
+		<h2>Invoke a method that throws an exception</h2>
+		<ul>
+			<li class=""><a href="#throws">Конструкция <code>throws</code> перечисляет типы исключений, которые метод может передавать.</a></li>
+			<li class="delayed"><a href="#throw">Передать исключение по команде <code>throw</code> можно только если в определении функции будет указано это исключение после ключевого слова <code>throws</code>.</a></li>
+			<li class="delayed"><a href="#throw_avoid">Исключение может быть объявлено в описании функции, но не вызываться в ее теле.</a></li>
+		</ul>
+	</section>
+	
+		<section id="throws" class="slide" title="Invoke a method that throws an exception">
+			<h3>Конструкция <code>throws</code> перечисляет типы исключений, которые метод может передавать.</h3>
+		<pre><code lang="java">import java.io.IOException;
+import java.text.ParseException;
+
+public class ThrowsExceptionExample {
+	public static void main(String[] args) throws IOException, 
+		ParseException {
+	}
+}</code></pre>
+		</section>
+		
+		<section id="throw" class="slide" title="Invoke a method that throws an exception">
+			<h3>Любое исключение, которое создается и передается внутри метода, должно быть указано в его описании после ключевого слова <code>throws</code>.</h3>
+		<pre><code lang="java">public class ThrowExceptionExample {
+	public static void main(String[] args) {
+		//throw new Exception(); // Error: Unhandled exception type Exception
+	}
+}</code></pre>
+		</section>
+
+		<section id="throw_avoid" class="slide" title="Invoke a method that throws an exception">
+			<h3>Исключение может быть объявлено в описании функции, но не вызываться в ее теле.</h3>
+		<pre><code lang="java">public class AccountExceptionExample {
+	public void withdraw() throws Exception {
+		// no errors
+	}
+	public static void main(String[] args) 
+		throws Exception {
+		new AccountExceptionExample().withdraw();
+	}
+}</code></pre>
+		</section>		
+	
+	<section class="slide" title="Handling Exceptions">
+		<h3>Recognize common exception classes and categories</h3>	
+		<ul>
+			<li class="">Все типы исключений происходщят от встроенного класса <code>Throwable</code>.</li>
+			<li class="delayed">Далее все исключения делятся на две ветви <code>Exceptions</code>, от которой происходят все пользовательские исключения и <code>Error</code>.</li>
+			<li class="delayed">В классе <code>Exception</code> подкласс <code>RuntimeException</code> исключения являются непроверяемыми и автоматически определяются для программ.</li>
+			<li class="delayed">Исключения определенные классом <code>Error</code> обычно возникают в следствие катастрофических сбоев, которые не могут быть обработаны программой.</li>
+		</ul>
+	</section>
+	
+</section>
+
+
+
+
+    
+	<section class="slide" title="">
+		<h2></h2>	
+		<p></p>
+		<ul>
+			<li class="delayed"></li>
+			<li class="delayed"></li>		
+		</ul>		
+<pre><code lang="java"></code></pre>
+	</section> 
+
+<section>
+	<header class="slide">
+		<h1></h1>
+	</header>
+	
+	<section class="slide" title="">
+		<h2></h2>	
+		<p></p>
+		<ul>
+			<li class="delayed"></li>
+			<li class="delayed"></li>		
+		</ul>		
+<pre><code lang="java"></code></pre>
+	</section>	
+	
+</section>
+
+
 <footer class="slide" title="The End">
 	<h2>Thank you!</h2>
 	<p>Get it or contribute at <a href="http://github.com/LeaVerou/CSSS">http://github.com/LeaVerou/CSSS</a></p>
@@ -234,6 +616,81 @@ document.addEventListener('DOMAttrModified',function(e) {
 	</ul>
 </footer>
 
+
+<!-- Examples -->
+<section id="examples">
+	
+	
+	<section class="slide" id="variable_hiding_1" title="Область видимости">
+		<h2>Variables</h2>	
+		<p>A local variable shadows an instance variable.</p>
+					<pre><code lang="java">class TwoScopes {
+	int a = 10;
+	public TwoScopes() {
+		int a = 5; // hiding (shadowing)
+		System.out.println(a); // 5
+		System.out.println(this.a); // 10
+	}
+}
+public class TwoScopesExamples {
+	public static void main(String[] args) {
+		new TwoScopes();
+	}
+}</code></pre>
+	</section>
+	
+	<section class="slide" id="variable_hiding_2" title="Область видимости">
+		<h2>Variables</h2>	
+		<ul>
+			<li>Instance variable shadows the inherited variable from it's parent classes.
+					<pre><code lang="java">class Base {
+	public String greeting = "Hello";
+}
+class Sub extends Base {
+	public String greeting = "Good Bye"; // hiding the inherited version
+	public String getGreeting() { return greeting; }
+}
+public class VariableOverridingTest {
+	public static void main(String[] args) {
+		Base obj = new Sub();
+		System.out.println(obj.greeting); // "Hello"
+		obj.greeting = "How are you";
+		System.out.println(obj.greeting); // "How are you"
+		System.out.println(obj.getGreeting()); // "Good Bye"
+	}
+}</code></pre></li>
+		</ul>
+	</section>	
+
+	<section class="slide" id="overriding_hiding" title="overriding hiding example">
+		<h2>Hiding & Overriding</h2>		
+		<pre><code lang="java">class Base {
+	public String greeting = "Hello";
+	public String getGreeting() { return greeting; }
+}
+
+class Sub extends Base {
+    // greeting (Base)
+	public String greeting = "Good Bye"; // greeting (Sub)
+	@Override
+	public String getGreeting() { return greeting; 
+	// return super.greeting; // hidded
+	}
+}
+
+public class VariableOverridingTest {
+	public static void main(String[] args) {
+		Base obj1 = new Base();
+		Base obj2 = new Sub();
+		System.out.println(obj1.getGreeting()); // "Hello"
+		System.out.println(obj2.getGreeting()); // "Good Bye"
+	}
+}</code></pre>
+	</section>
+	
+	
+</section>	<!-- Examples end -->
+
 <script src="slideshow.js"></script>
 <script src="plugins/css-edit.js"></script>
 <script src="plugins/css-snippets.js"></script>
@@ -243,7 +700,7 @@ document.addEventListener('DOMAttrModified',function(e) {
 var slideshow = new SlideShow();
 
 var snippets = document.querySelectorAll('.snippet');
-for(var i=0; i<snippets.length; i++) {
+for (var i=0; i<snippets.length; i++) {
 	new CSSSnippet(snippets[i]);
 }
 

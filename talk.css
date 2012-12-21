@@ -1,11 +1,11 @@
 #intro {
-	background: rgba(0,0,0,.7);
+	background: rgba(0,0,0,.1);
 	padding: 0;
 	border: 0;
 }
 
 #intro h1 {
-	width: 60%;
+	width: 40%;
 	min-height: 500px;
 	margin: 5% auto 0;
 }
@@ -15,10 +15,10 @@
 	font-weight: bold;
 	text-align: center;
 	font-size: 100%;
-	line-height: .3;
-	color: rgba(0,0,0,.7);
+	line-height: .42;
+	color: rgba(0,0,0,.55);
 	text-shadow: none;
-	background: url(img/rainbow-wood.jpg) bottom;
+	/* background: url("img/Wallpaper.03.jpg") 0 7.74em; */
 	padding:.6em 0 0;
 	overflow: hidden;
 }

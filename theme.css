@@ -5,13 +5,16 @@
 	@version 1.0
 */
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic");
+
 /**
  * Variables
  */
-.slide h2,
+.slide h2, .slide h3, 
 section > header.slide > h1 {
-	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	font-weight: 100;
+	/* font-family: 'Helvetica Neue', Helvetica, sans-serif; */
+	font-family: 'Open Sans', sans-serif; 
+    font-weight: bold;
 }
  
 /**
@@ -26,7 +29,9 @@ section > header.slide > h1 {
 }
 
 html {
-	background: black url(img/rainbow-wood.jpg) bottom center;
+	/* background: black url(img/rainbow-wood.jpg) bottom center; */
+    background: black url("img/Wallpaper.03.jpg") bottom center; 
+    
 	background-size: cover;
 }
 
@@ -94,7 +99,7 @@ strong, b {
 	background-clip: padding-box;
 	text-shadow:.05em .05em .1em rgba(0,0,0,.4);
 	color: white;
-	border:30px solid transparent;
+	border: 30px solid transparent;
 }
 
 #indicator {
@@ -103,20 +108,21 @@ strong, b {
 	text-shadow: .03em .03em .1em white;
 }
 
-	.slide h2 {
-		font-family: 'Helvetica Neue', Helvetica, sans-serif;
-		font-weight: 100;
-		font-size: 1.2in;
+	.slide h1, h2 {
+		font-size: 0.65in;
 	}
+	.slide h3 {
+	font-size: 0.6in;
+	 }	
 	
 	.slide p,
 	.slide li {
-		font-weight: bold;
+		/* font-weight: bold; */
 		letter-spacing: -.03em;
 	}
 		
 	.slide > ul {
-		list-style:none;	
+		list-style: none;	
 	}
 	
 	.slide ol {
@@ -137,6 +143,7 @@ strong, b {
 		}
 		
 		.slide > ul > li:before {
+			/* content: &radic; */
 			content:'\2714';
 			color: #a0c12c;
 			padding-right: .2em;
@@ -147,9 +154,14 @@ strong, b {
 				color: #28bcbc;
 				padding-right: .2em;
 			}
+            
+    ul.topics a {
+    	font-family: 'Open Sans', sans-serif; 
+        text-decoration: none !important;
+    }            
 			
 section > header.slide {
-	background-color: rgba(0,0,0,.8);
+	background-color: rgba(0,0,0,.5);
 }
 
 	section > header.slide > h1 {
@@ -200,16 +212,13 @@ section > header.slide {
 }
 
 .attribution {
-	background: rgba(0,0,0,.8);
 	color: white;
 	display: block;
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 1em;
-	padding: .5em 1em;
-	font-size: 30%;
-	text-shadow: .05em .05em .1em black;
+	/* top: 11.14em; */
+	top: 68.25%;    
 }
 
 	.attribution a {
