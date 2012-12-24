@@ -76,13 +76,13 @@
 				</ul>
 			</li>
 		</ul>
-		<pre class="delayed"><code lang="java">public class Variables {
-	private int instance_var = 1;
-	public static int CLASS_VAR = 2;
-	public void method(String[] parameters) { // 4
+		<pre><code lang="java">public class Variables {</code>
+<code lang="java" class="delayed">	private int instance_var = 1;</code>
+<code lang="java" class="delayed">	public static int CLASS_VAR = 2;</code>
+<code lang="java" class="delayed">	public void method(String[] parameters) { // 4
 		int local_var = 3;
-	}
-}</code></pre>
+	}</code>
+<code lang="java" >}</code></pre>
 	</section>
 	
 	<section class="slide" id="instance_variables_1" title="Переменные экземпляра класса">
@@ -265,17 +265,39 @@ Creating and Using Arrays
 		<h1 data-l10n-id="t4-arrays-h">Arrays</h1>
 	</header>
 	
-	<section class="slide" data-l10n-id="t4-arrays" title="Creating and Using Arrays">
-		<h2>Declare, instantiate, initialize and use arrays</h2>
+	<section class="slide" data-l10n-id="t4-arrays-section" title="Creating and Using Arrays">
+		<h2 data-l10n-id="t4-arrays-h">Arrays</h2>
+		<p data-l10n-id="t4-arrays-p">Declare, instantiate, initialize and use:</p>
 		<ul>
-			<li class=""><a href="#arrays_object">An array is a container object that holds a fixed number of values of a single type.</a></li>
-			<li class="delayed"><a href="#arrays_length">The length of an array is established when the array is created. After creation, its length is fixed.</a></li>
-			<li class="delayed"><a href="#arrays_ids">Each element in an array is accessed by its numerical index.</a></li>	
-			<li class="delayed"><a href="#arrays_default_values">The elements of arrays are always set to default values wherever the array is created.</a> <a href="#default_values">(default values)</a></li>				
+			<li><a href="arrays_1d" data-l10n-id="t4-arrays-1d">a one-dimensional arrays</a></li>
+			<li><a href="arrays_md" data-l10n-id="t4-arrays-md">multi-dimensional arrays</a></li>
+			<li><a href="arraylist" data-l10n-id="t4-arraylist">an ArrayList</a></li>					
+		</ul>
+	</section>	
+	
+	<section id="arrays_1d" class="slide" data-l10n-id="t4-arrays-section" title="Creating and Using Arrays">
+		<h2 data-l10n-id="t4-arrays-1d-h">One-dimensional arrays</h2>
+		<ul>
+			<li class=""><a href="#arrays_1d_object" data-l10n-id="t4-arrays-1d-object">An array is a container object that holds a fixed number of values of a single type.</a></li>
+			<li class="delayed"><a href="#arrays_1d_length" data-l10n-id="t4-arrays-1d-length">The length of an array is established when the array is created. After creation, its length is fixed.</a></li>
+			<li class="delayed"><a href="#arrays_1d_ids" data-l10n-id="t4-arrays-1d-ids">Each element in an array is accessed by its numerical index.</a></li>	
+			<li class="delayed"><a href="#arrays_default_values"  data-l10n-id="t4-arrays-default-values">The elements of arrays are always set to default values wherever the array is created.</a> <a href="#default_values">(default values)</a></li>				
+		</ul>
+	</section>
+	
+	<section id="arrays_md" class="slide" data-l10n-id="t4-arrays-section" title="Creating and Using Arrays">
+		<h2 data-l10n-id="t4-arrays-md-h">Multi-dimensional arrays</h2>
+		<ul>				
+		</ul>
+	</section>
+	
+	<section id="arraylist" class="slide" data-l10n-id="t4-arrays-section" title="Creating and Using Arrays">
+		<h2 data-l10n-id="t4-arraylist-h">ArrayList</h2>
+		<ul>				
 		</ul>
 	</section>
 
-	<section class="slide" id="arrays_object" title="Array as object">
+	<section class="slide" id="arrays_1d_object" title="Array as object">
 		<h2>Arrays</h2>
 		<p>An array is a container object that holds a fixed number of values of a single type</p>		
 		<pre><code lang="java">// declares an array of integers
@@ -287,7 +309,7 @@ float anArrayOfFloats[];
 String[] s = new String[10];</code></pre>
 	</section>
 
-	<section class="slide" id="arrays_length" title="Array as object">
+	<section class="slide" id="arrays_1d_length" title="Array as object">
 		<h2>Arrays</h2>
 		<p>The length of an array is established when the array is created. After creation, its length is fixed.</p>		
 		<pre><code lang="java">// allocates memory for 10 integers
@@ -298,7 +320,7 @@ for(int j = 0; j < anArray.length; j++) {
 }</code></pre>
 	</section>
 
-	<section class="slide" id="arrays_ids" title="Index of array element">
+	<section class="slide" id="arrays_1d_ids" title="Index of array element">
 		<h2>Arrays</h2>
 		<p>Each element in an array is accessed by its numerical index.</p>		
 		<pre><code lang="java">int i = 0;
