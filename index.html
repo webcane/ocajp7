@@ -59,7 +59,7 @@
 		</ul>
 	</section>
 	
-	<section class="slide" id="fields_variables" title="Переменные">
+	<section class="slide" id="fields_variables" title="Variables">
 		<h2>Variables</h2>
 		<p>The Java programming language defines the following kinds of variables:</p>		
 		<ul>
@@ -76,14 +76,19 @@
 				</ul>
 			</li>
 		</ul>
+	</section>
+	
+	<section class="slide" id="fields_variables_example" title="Variables">
+		<h2>Variables</h2>
+		<p>The Java programming language defines the following kinds of variables:</p>		
 		<pre><code lang="java">public class Variables {</code>
-<code lang="java" class="delayed">	private int instance_var = 1;</code>
-<code lang="java" class="delayed">	public static int CLASS_VAR = 2;</code>
-<code lang="java" class="delayed">	public void method(String[] parameters) { // 4
-		int local_var = 3;
+<code lang="java" class="delayed">	private int instance_var = 1; //instance variable</code>
+<code lang="java" class="delayed">	public static int CLASS_VAR = 2; //class variable</code>
+<code lang="java" class="delayed">	public void method(String[] parameters) { //parameter
+		int local_var = 3; //local variable
 	}</code>
 <code lang="java" >}</code></pre>
-	</section>
+	</section>	
 	
 	<section class="slide" id="instance_variables_1" title="Переменные экземпляра класса">
 		<h2>Instance Variables</h2>	
@@ -269,9 +274,9 @@ Creating and Using Arrays
 		<h2 data-l10n-id="t4-arrays-h">Arrays</h2>
 		<p data-l10n-id="t4-arrays-p">Declare, instantiate, initialize and use:</p>
 		<ul>
-			<li><a href="arrays_1d" data-l10n-id="t4-arrays-1d">a one-dimensional arrays</a></li>
-			<li><a href="arrays_md" data-l10n-id="t4-arrays-md">multi-dimensional arrays</a></li>
-			<li><a href="arraylist" data-l10n-id="t4-arraylist">an ArrayList</a></li>					
+			<li><a href="#arrays_1d" data-l10n-id="t4-arrays-1d">a one-dimensional arrays</a></li>
+			<li><a href="#arrays_md" data-l10n-id="t4-arrays-md">multi-dimensional arrays</a></li>
+			<li><a href="#arraylist" data-l10n-id="t4-arraylist">an ArrayList</a></li>					
 		</ul>
 	</section>	
 	
@@ -292,10 +297,28 @@ Creating and Using Arrays
 	</section>
 	
 	<section id="arraylist" class="slide" data-l10n-id="t4-arrays-section" title="Creating and Using Arrays">
-		<h2 data-l10n-id="t4-arraylist-h">ArrayList</h2>
-		<ul>				
+		<h2 data-l10n-id="t4-arraylist-h-1">ArrayList</h2>
+		<p data-l10n-id="t4-arraylist-p-1"></p>
+		<ul>
+			<li data-l10n-id="t4-arraylist-extends">The ArrayList class extends AbstractList and implements the List interface.</li>
+			<li data-l10n-id="t4-arraylist-dynamic" class="delayed">ArrayList supports dynamic arrays that can grow as needed.</li>
+			<li data-l10n-id="t4-arraylist-initial" class="delayed">Constructs an empty list with an initial capacity of ten.</li>
+			<li data-l10n-id="t4-arraylist-objects" class="delayed">A collection is an object that can hold references to other objects.</li>
 		</ul>
 	</section>
+	
+	<section id="arraylist_2" class="slide" data-l10n-id="t4-arrays-section" title="Creating and Using Arrays">
+		<h2 data-l10n-id="t4-arraylist-h-2">ArrayList</h2>
+		<p data-l10n-id="t4-arraylist-p-1"></p>		
+		<ul>
+			<li data-l10n-id="t4-arraylist-capacity">The capacity is the size of the underlying array that is used to store the elements.</li>		
+			<li data-l10n-id="t4-arraylist-size" class="delayed">Only function size() returns the number of ArrayList object elements.</li>
+		</ul>
+		<pre class="delayed"><code lang="java">List arr = ArrayList();
+arr.size();
+arr.contains(100);
+arr.remove("asd");</code></pre>		
+	</section>	
 
 	<section class="slide" id="arrays_1d_object" title="Array as object">
 		<h2>Arrays</h2>
@@ -314,7 +337,8 @@ String[] s = new String[10];</code></pre>
 		<p>The length of an array is established when the array is created. After creation, its length is fixed.</p>		
 		<pre><code lang="java">// allocates memory for 10 integers
 int[] anArray = new int[10];
-// Note that arrays have a length field not a length() method.
+// Note that arrays have a length 
+// field not a length() method.
 for(int j = 0; j < anArray.length; j++) {
 	anArray[j] = j;
 }</code></pre>
