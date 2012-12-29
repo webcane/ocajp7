@@ -13,14 +13,40 @@
 	<link href="talk.css" rel="stylesheet" />
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="prefixfree.min.js"></script>
+	<script type="text/javascript">
+	    function onLocalized() {
+	      var l10n = document.webL10n,
+	          textProp = document.body.textContent ? 'textContent' : 'innerText';
+	      document.getElementsByTagName('select')[0].value = l10n.getLanguage();
+	    };
+	    if (document.addEventListener) {
+	      window.addEventListener('localized', onLocalized, false);
+	    } else {
+	      document.documentElement.localized = 0;
+	      document.documentElement.attachEvent('onpropertychange', function(e) {
+	        if (e.propertyName === 'localized')
+	          onLocalized();
+	      });
+	    }
+	</script>	
 </head>
-<body data-duration="10">
-
+<body>
+	
+	<nav>
+		<a href="https://github.com/webcane/ocajp7"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 999;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+  	</nav>
+  
 <header id="intro" class="slide">
 	<h1>
 		<code>Java OCAJP</code>
 	</h1>
 	<p class="attribution">By Mikhail Niedre</p>
+<p style="text-align: right;">
+        <select onchange="document.webL10n.setLanguage(this.value || this.options[this.selectedIndex].text);">
+          <option selected>en</option>
+          <option>ru</option>
+        </select>
+      </p>	
 </header>
 
 
@@ -48,20 +74,20 @@
 		<h1 data-l10n-id="t1-java-basics">Java Basics</h1>
 	</header>	
 	
-	<section class="slide" title="Область видимости">
-		<h2>Define the scope of variables</h2>	
+	<section class="slide" data-l10n-id="t1-scope" title="Scope">
+		<h2 data-l10n-id="t1-scope-h2">Define the scope of variables</h2>	
 		<ul>
-			<li>Different kinds of variables have different scopes.</li>
-			<li class="delayed"><a href="#fields_variables">В Java имеется две основные области видимости для переменных - определяемые классом и методом (fields and variables).</a></li>
+			<li data-l10n-id="t1-scope-variables">Different kinds of variables have different scopes.</li>
+			<li class="delayed" data-l10n-id="t1-scope-two"><a href="#fields_and_variables">There are a two main scopes of variables in Java - determining of class and method (fields and variables).</a></li>
 			<li class="delayed"><a href="#variable_hiding_1">A local variable shadows an instance variable.</a></li>
 			<li class="delayed"><a href="#variable_hiding_2">Instance variable shadows the inherited variable from it's parent classes.</a></li>			
 			<li class="delayed">Instance variables are not <a href="#overriding_hiding" title="overriding hiding example">overridden</a>, they are <a href="#overriding_hiding" title="overriding hiding example">hidden</a>.</li>
 		</ul>
 	</section>
 	
-	<section class="slide" id="fields_variables" title="Variables">
-		<h2>Variables</h2>
-		<p>The Java programming language defines the following kinds of variables:</p>		
+	<section class="slide" id="fields_and_variables" title="Variables">
+		<h2>Variables</h2>		
+		<p><a href="#fields_and_variables_example" title="variables example">The Java programming language defines the following kinds of variables</a>:</p>		
 		<ul>
 		    <li class="delayed">fields:
 				<ul>			
@@ -78,17 +104,17 @@
 		</ul>
 	</section>
 	
-	<section class="slide" id="fields_variables_example" title="Variables">
-		<h2>Variables</h2>
-		<p>The Java programming language defines the following kinds of variables:</p>		
-		<pre><code lang="java">public class Variables {</code>
-<code lang="java" class="delayed">	private int instance_var = 1; //instance variable</code>
-<code lang="java" class="delayed">	public static int CLASS_VAR = 2; //class variable</code>
-<code lang="java" class="delayed">	public void method(String[] parameters) { //parameter
-		int local_var = 3; //local variable
-	}</code>
-<code lang="java" >}</code></pre>
+	<section class="slide" id="fields_and_variables" title="Variables">
+		<h2>Declaring a Variable</h2>		
+		<ul>
+		    <li class="delayed" data-l10n-id="t1-variables-declare"><a href="#variables_declare_example">In Java, all variables must be declared before they can be used.</a></li>
+			<li class="delayed">.</li>
+			<li class="delayed">.</li>
+			<li class="delayed">.</li>
+		</ul> 		
 	</section>	
+	
+				
 	
 	<section class="slide" id="instance_variables_1" title="Переменные экземпляра класса">
 		<h2>Instance Variables</h2>	
@@ -319,88 +345,6 @@ arr.size();
 arr.contains(100);
 arr.remove("asd");</code></pre>		
 	</section>	
-
-	<section class="slide" id="arrays_1d_object" title="Array as object">
-		<h2>Arrays</h2>
-		<p>An array is a container object that holds a fixed number of values of a single type</p>		
-		<pre><code lang="java">// declares an array of integers
-int[] anArray;
-// this form is discouraged
-float anArrayOfFloats[];
-
-// will be created an eleven objects
-String[] s = new String[10];</code></pre>
-	</section>
-
-	<section class="slide" id="arrays_1d_length" title="Array as object">
-		<h2>Arrays</h2>
-		<p>The length of an array is established when the array is created. After creation, its length is fixed.</p>		
-		<pre><code lang="java">// allocates memory for 10 integers
-int[] anArray = new int[10];
-// Note that arrays have a length 
-// field not a length() method.
-for(int j = 0; j < anArray.length; j++) {
-	anArray[j] = j;
-}</code></pre>
-	</section>
-
-	<section class="slide" id="arrays_1d_ids" title="Index of array element">
-		<h2>Arrays</h2>
-		<p>Each element in an array is accessed by its numerical index.</p>		
-		<pre><code lang="java">int i = 0;
-long j = 0;
-String s[] = { "a", "b", "c", "d" }
-String c1[] = s[i]; // ok
-String c2[] = s[j]; // compile error!
-</code></pre>
-	</section>	
-
-	<section id="default_values" class="slide" title="Primitive data types default values">
-		
-		<h2>Data types default values</h2>	
-		<table>
-		  <tr>
-		      <td>Data Type</td>
-		      <td>Default Value (for fields)</td>
-		  </tr>
-		  <tr>
-		      <td>byte</td>
-		      <td>0</td>
-		  </tr>
-		  <tr>
-		      <td>short</td>
-		      <td>0</td>
-		  </tr>
-		  <tr>
-		      <td>int</td>
-		      <td>0</td>
-		  </tr>
-		  <tr>
-		      <td>long</td>
-		      <td>0L</td>
-		  </tr>
-		  <tr>
-		      <td>float</td>
-		      <td>0.0f</td>
-		  </tr>
-		  <tr>
-		      <td>double</td>
-		      <td>0.0d</td>
-		  </tr>
-		  <tr>
-		      <td>char</td>
-		      <td>'\u0000'</td>
-		  </tr>
-		  <tr>
-		      <td>String (or any object)</td>
-		      <td>null</td>
-		  </tr>
-		  <tr>
-		      <td>boolean</td>
-		      <td>false</td>
-		  </tr>		  
-		</table>
-	</section>	
 	
 </section>
 
@@ -622,6 +566,174 @@ public class ThrowsExceptionExample {
 
 
 
+<!-- Examples start -->
+<section>
+	<header id="examples" class="slide">
+		<h1 data-l10n-id="examples-h">Examples</h1>
+	</header>
+	
+	<section class="slide" id="variables_declare_example" title="Declaring a Variables">
+		<h2>Declaring a Variables</h2>
+		<p>The Java programming language defines the following kinds of variables:</p>		
+		<pre><code lang="java">public class Variables {</code>
+<code lang="java" class="delayed">	private int instance_var = 1; //instance variable</code>
+<code lang="java" class="delayed">	public static int CLASS_VAR = 2; //class variable</code>
+<code lang="java" class="delayed">	public void method(String[] parameters) { //parameter
+		int local_var = 3; //local variable
+	}</code>
+<code lang="java" >}</code></pre>
+	</section>	
+	
+	<section class="slide" id="variable_hiding_1" title="Область видимости">
+		<h2>Variables</h2>	
+		<p>A local variable shadows an instance variable.</p>
+					<pre><code lang="java">class TwoScopes {
+	int a = 10;
+	public TwoScopes() {
+		int a = 5; // hiding (shadowing)
+		System.out.println(a); // 5
+		System.out.println(this.a); // 10
+	}
+}
+public class TwoScopesExamples {
+	public static void main(String[] args) {
+		new TwoScopes();
+	}
+}</code></pre>
+	</section>
+	
+	<section class="slide" id="variable_hiding_2" title="Область видимости">
+		<h2>Variables</h2>	
+		<p>Instance variable shadows the inherited variable from it's parent classes.</p>
+					<pre><code lang="java">class Base {
+	public String greeting = "Hello";
+}
+class Sub extends Base {
+	public String greeting = "Good Bye"; // hiding the inherited version
+	public String getGreeting() { return greeting; }
+}
+public class VariableOverridingTest {
+	public static void main(String[] args) {
+		Base obj = new Sub(); System.out.println(obj.greeting); // "Hello"
+		obj.greeting = "How are you";
+		System.out.println(obj.greeting); // "How are you"
+		System.out.println(obj.getGreeting()); // "Good Bye"
+	}
+}</code></pre>
+	</section>	
+	
+	<section class="slide" id="arrays_1d_object" title="Array as object">
+		<h2>Arrays</h2>
+		<p>An array is a container object that holds a fixed number of values of a single type</p>		
+		<pre><code lang="java">// declares an array of integers
+int[] anArray;
+// this form is discouraged
+float anArrayOfFloats[];
+
+// will be created an eleven objects
+String[] s = new String[10];</code></pre>
+	</section>
+
+	<section class="slide" id="arrays_1d_length" title="Array as object">
+		<h2>Arrays</h2>
+		<p>The length of an array is established when the array is created. After creation, its length is fixed.</p>		
+		<pre><code lang="java">// allocates memory for 10 integers
+int[] anArray = new int[10];
+// Note that arrays have a length 
+// field not a length() method.
+for(int j = 0; j < anArray.length; j++) {
+	anArray[j] = j;
+}</code></pre>
+	</section>
+
+	<section class="slide" id="arrays_1d_ids" title="Index of array element">
+		<h2>Arrays</h2>
+		<p>Each element in an array is accessed by its numerical index.</p>		
+		<pre><code lang="java">int i = 0;
+long j = 0;
+String s[] = { "a", "b", "c", "d" }
+String c1[] = s[i]; // ok
+String c2[] = s[j]; // compile error!
+</code></pre>
+	</section>	
+
+	<section id="default_values" class="slide" title="Primitive data types default values">
+		
+		<h2>Data types default values</h2>	
+		<table>
+		  <tr>
+		      <td>Data Type</td>
+		      <td>Default Value (for fields)</td>
+		  </tr>
+		  <tr>
+		      <td>byte</td>
+		      <td>0</td>
+		  </tr>
+		  <tr>
+		      <td>short</td>
+		      <td>0</td>
+		  </tr>
+		  <tr>
+		      <td>int</td>
+		      <td>0</td>
+		  </tr>
+		  <tr>
+		      <td>long</td>
+		      <td>0L</td>
+		  </tr>
+		  <tr>
+		      <td>float</td>
+		      <td>0.0f</td>
+		  </tr>
+		  <tr>
+		      <td>double</td>
+		      <td>0.0d</td>
+		  </tr>
+		  <tr>
+		      <td>char</td>
+		      <td>'\u0000'</td>
+		  </tr>
+		  <tr>
+		      <td>String (or any object)</td>
+		      <td>null</td>
+		  </tr>
+		  <tr>
+		      <td>boolean</td>
+		      <td>false</td>
+		  </tr>		  
+		</table>
+	</section>	
+	
+	
+	<section class="slide" id="overriding_hiding" title="overriding hiding example">
+		<h2>Hiding & Overriding</h2>		
+		<pre><code lang="java">class Base {
+	public String greeting = "Hello";
+	public String getGreeting() { return greeting; }
+}
+
+class Sub extends Base {
+    // greeting (Base)
+	public String greeting = "Good Bye"; // greeting (Sub)
+	@Override
+	public String getGreeting() { return greeting; 
+	// return super.greeting; // hidded
+	}
+}
+
+public class VariableOverridingTest {
+	public static void main(String[] args) {
+		Base obj1 = new Base();
+		Base obj2 = new Sub();
+		System.out.println(obj1.getGreeting()); // "Hello"
+		System.out.println(obj2.getGreeting()); // "Good Bye"
+	}
+}</code></pre>
+	</section>	
+		
+</section>
+<!-- Examples end -->
+
     
 	<section class="slide" title="">
 		<h2></h2>	
@@ -661,81 +773,6 @@ public class ThrowsExceptionExample {
 		<li>A big thanks to the community at Github for various contributions to this project</li>
 	</ul>
 </footer>
-
-
-<!-- Examples -->
-<section id="examples">
-	
-	
-	<section class="slide" id="variable_hiding_1" title="Область видимости">
-		<h2>Variables</h2>	
-		<p>A local variable shadows an instance variable.</p>
-					<pre><code lang="java">class TwoScopes {
-	int a = 10;
-	public TwoScopes() {
-		int a = 5; // hiding (shadowing)
-		System.out.println(a); // 5
-		System.out.println(this.a); // 10
-	}
-}
-public class TwoScopesExamples {
-	public static void main(String[] args) {
-		new TwoScopes();
-	}
-}</code></pre>
-	</section>
-	
-	<section class="slide" id="variable_hiding_2" title="Область видимости">
-		<h2>Variables</h2>	
-		<ul>
-			<li>Instance variable shadows the inherited variable from it's parent classes.
-					<pre><code lang="java">class Base {
-	public String greeting = "Hello";
-}
-class Sub extends Base {
-	public String greeting = "Good Bye"; // hiding the inherited version
-	public String getGreeting() { return greeting; }
-}
-public class VariableOverridingTest {
-	public static void main(String[] args) {
-		Base obj = new Sub();
-		System.out.println(obj.greeting); // "Hello"
-		obj.greeting = "How are you";
-		System.out.println(obj.greeting); // "How are you"
-		System.out.println(obj.getGreeting()); // "Good Bye"
-	}
-}</code></pre></li>
-		</ul>
-	</section>	
-
-	<section class="slide" id="overriding_hiding" title="overriding hiding example">
-		<h2>Hiding & Overriding</h2>		
-		<pre><code lang="java">class Base {
-	public String greeting = "Hello";
-	public String getGreeting() { return greeting; }
-}
-
-class Sub extends Base {
-    // greeting (Base)
-	public String greeting = "Good Bye"; // greeting (Sub)
-	@Override
-	public String getGreeting() { return greeting; 
-	// return super.greeting; // hidded
-	}
-}
-
-public class VariableOverridingTest {
-	public static void main(String[] args) {
-		Base obj1 = new Base();
-		Base obj2 = new Sub();
-		System.out.println(obj1.getGreeting()); // "Hello"
-		System.out.println(obj2.getGreeting()); // "Good Bye"
-	}
-}</code></pre>
-	</section>
-	
-	
-</section>	<!-- Examples end -->
 
 <script src="slideshow.js"></script>
 <script src="plugins/css-edit.js"></script>
