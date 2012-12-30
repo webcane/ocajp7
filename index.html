@@ -11,6 +11,7 @@
 	<link href="slideshow.css" rel="stylesheet" />
 	<link href="theme.css" rel="stylesheet" />
 	<link href="talk.css" rel="stylesheet" />
+	<link href="ribbon.css" rel="stylesheet" />
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="prefixfree.min.js"></script>
 	<script type="text/javascript">
@@ -31,11 +32,11 @@
 	</script>	
 </head>
 <body>
-	
-	<nav>
-		<a href="https://github.com/webcane/ocajp7"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 999;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+
+	<nav class="ribbon">
+		<a id="orange" href="https://github.com/webcane/ocajp7" alt="Fork me on GitHub" >Fork me on GitHub</a>
   	</nav>
-  
+
 <header id="intro" class="slide">
 	<h1>
 		<code>Java OCAJP</code>
@@ -52,11 +53,11 @@
 
 <!-- OCAJP topics -->
 <section>
-	<section class="slide" data-l10n-id="section-exam-topics" title="Темы экзамена">
+	<section class="slide" data-l10n-id="section-exam-topics" title="Exam Topics">
 		<h2 data-l10n-id="exam-topics">Exam Topics</h2>	
 		<ul class="topics">
 			<li><a href="#basics" data-l10n-id="t1-basics">Java Basics</a></li>
-			<li><a href="#variables" data-l10n-id="t2-variables">Declare and initialize variable</a></li>
+			<li><a href="#data-types" data-l10n-id="t2-data-types">Working With Java Data Types</a></li>
 			<li><a href="#operators-constructs" data-l10n-id="t3-operators-constructs">Using Operators and Decision Constructs</a></li>
 			<li><a href="#arrays" data-l10n-id="t4-arrays">Creating and Using Arrays</a></li>
 			<li><a href="#loops" data-l10n-id="t5-loops">Using Loop Constructs</a></li>
@@ -103,18 +104,6 @@
 			</li>
 		</ul>
 	</section>
-	
-	<section class="slide" id="fields_and_variables" title="Variables">
-		<h2>Declaring a Variable</h2>		
-		<ul>
-		    <li class="delayed" data-l10n-id="t1-variables-declare"><a href="#variables_declare_example">In Java, all variables must be declared before they can be used.</a></li>
-			<li class="delayed">.</li>
-			<li class="delayed">.</li>
-			<li class="delayed">.</li>
-		</ul> 		
-	</section>	
-	
-				
 	
 	<section class="slide" id="instance_variables_1" title="Переменные экземпляра класса">
 		<h2>Instance Variables</h2>	
@@ -270,12 +259,27 @@ obj = new Box(); // резервирование памяти для объек�
 </section>
 
 
-<!-- Declare and initialize variable -->
+<!-- Working With Java Data Types -->
 <section>
-	<header id="variables" class="slide">
-		<h1 data-l10n-id="t2-variables">Declare and initialize variable</h1>
+	<header id="data-types" class="slide">
+		<h1 data-l10n-id="t2-data-types-h">Working With Java Data Types</h1>
 	</header>
 	
+	
+	<section class="slide" data-l10n-id="t2-declare" title="Declare and initialize variables">
+		<h2 data-l10n-id="t2-declare-h2" >Declaring a Variable</h2>		
+		<ul>
+		    <li class="delayed" data-l10n-id="t2-variables-declare"><a href="#variables_declare_example">In Java, all variables must be declared before they can be used.</a></li>
+			<li class="delayed">To declare more than one variable of the specified type, use a comma-separated list.</li>
+		</ul>
+<pre><code lang="java">public static void main(String[] argv) {</code>
+<code lang="java" class="delayed">    int a, b, c; // declares three ints, a, b, and c.
+    int d = 3, e, f = 5; // declares three more ints, initializing d and f.</code>
+<code lang="java" class="delayed">    byte z = 2; // initializes z.
+    double pi = 3.14; // declares an approximation of pi.
+    char x = 'x'; // the variable x has the value 'x'.</code>
+<code lang="java">}</code></pre>
+	</section>	
 </section>
 
 
