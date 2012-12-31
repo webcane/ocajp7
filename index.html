@@ -78,17 +78,29 @@
 	<section class="slide" data-l10n-id="t1-scope" title="Scope">
 		<h2 data-l10n-id="t1-scope-h2">Define the scope of variables</h2>	
 		<ul>
-			<li data-l10n-id="t1-scope-variables">Different kinds of variables have different scopes.</li>
-			<li class="delayed" data-l10n-id="t1-scope-two"><a href="#fields_and_variables">There are a two main scopes of variables in Java - determining of class and method (fields and variables).</a></li>
-			<li class="delayed"><a href="#variable_hiding_1">A local variable shadows an instance variable.</a></li>
-			<li class="delayed"><a href="#variable_hiding_2">Instance variable shadows the inherited variable from it's parent classes.</a></li>			
-			<li class="delayed">Instance variables are not <a href="#overriding_hiding" title="overriding hiding example">overridden</a>, they are <a href="#overriding_hiding" title="overriding hiding example">hidden</a>.</li>
+			<li data-l10n-id="t1-scope-memory">Used correctly, variable scope enables a program to reuse and conserve memory.</li>
+			<li class="delayed" data-l10n-id="t1-scope-variables">Different kinds of variables have different scopes.</li>
+			<li class="delayed"><a href="#fields_and_variables" data-l10n-id="t1-scope-two">There are a two main scopes of variables in Java - determining of class and method (fields and variables).</a></li>
+			<li class="delayed"><a href="#variable_hiding_1" data-l10n-id="t1-scope-variable-hiding-1">A local variable shadows an instance variable.</a></li>
+			<li class="delayed"><a href="#variable_hiding_2" data-l10n-id="t1-scope-variable-hiding-2">Instance variable shadows the inherited variable from it's parent classes.</a></li>			
+			<li class="delayed"><a href="#overriding_hiding" data-l10n-id="t1-scope-overriding-hiding" title="overriding hiding example">Instance variables are not overridden, they are hidden.</a></li>
 		</ul>
 	</section>
 	
-	<section class="slide" id="fields_and_variables" title="Variables">
-		<h2>Variables</h2>		
-		<p><a href="#fields_and_variables_example" title="variables example">The Java programming language defines the following kinds of variables</a>:</p>		
+	<section class="slide" data-l10n-id="t1-variables" title="Variables">
+		<h2 data-l10n-id="t1-variables-h">Variables</h2>		
+		<ul>
+		    <li data-l10n-id="t1-variable-element">A variable is a main element of the data storage in Java program.</li>
+			<li data-l10n-id="t1-variable-memory">A variable is a memory location that may be assigned a value.</li>
+			<li data-l10n-id="t1-variable-change">The value of a variable is changeable.</li>
+			<li data-l10n-id="t1-variable-composite">A variable is defined by an identifier, a type, and an optional initializer.</li>
+			<li data-l10n-id="t1-variable-scope">The variables also have a scope (visibility / lifetime).</li>
+		</ul>
+	</section>	
+	
+	<section class="slide" id="fields_and_variables" data-l10n-id="t1-variables" title="Variables">
+		<h2 data-l10n-id="t1-variables-h">Variables</h2>		
+		<p><a href="#fields_and_variables_example" data-l10n-id="t1-variables-4" title="variables example">The Java programming language defines the following kinds of variables</a>:</p>		
 		<ul>
 		    <li class="delayed">fields:
 				<ul>			
@@ -108,7 +120,7 @@
 	<section class="slide" id="instance_variables_1" title="Переменные экземпляра класса">
 		<h2>Instance Variables</h2>	
 		<ul>
-		    <li class="delayed">Переменные экземпляра объявляются в классе, но вне любого метода конструктора или блока.</li>
+		    <li class="delayed">Instance variables are declared in a class, but outside a method, constructor or any block.Переменные экземпляра объявляются в классе, но вне любого метода конструктора или блока.</li>
 			<li class="delayed">.</li>
 			<li class="delayed">.</li>
 			<li class="delayed">.</li>
