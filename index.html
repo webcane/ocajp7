@@ -389,7 +389,7 @@ arr.remove("asd");</code></pre>
 		<ul>
 			<li><a href="#create_methods" data-l10n-id="t6-create-methods">Create methods with arguments and return values</a></li>
 			<li><a href="#static" data-l10n-id="t6-static">Apply the static keyword to methods and fields</a></li>
-			<li><a href="#overload_methods" data-l10n-id="t6-overload-methods">Create an overloaded method</a></li>
+			<li><a href="#overload_methods" data-l10n-id="t6-method-overloading">Create an overloaded method</a></li>
 			<li><a href="#consructors" data-l10n-id="t6-consructors">Differentiate between default and user defined constructors</a></li>
 			<li><a href="#overload_consructors" data-l10n-id="t6-overload-consructors">Create and overload constructors</a></li>
 			<li><a href="#access_modifiers" data-l10n-id="t6-access-modifiers">Apply access modifiers</a></li>
@@ -406,9 +406,24 @@ arr.remove("asd");</code></pre>
 		<h2 data-l10n-id="t6-static-h2">static keyword (for methods and fields)</h2>
 	</section>
 	
-	<section class="slide" id="overload_methods" data-l10n-id="t6-overload-methods" title="Create an overloaded method">
+	<section class="slide" id="overload_methods" data-l10n-id="t6-method-overloading" title="Create an overloaded method">
+		<h2 data-l10n-id="t6-method-overloading-h2">Method overloading</h2>
+			<ul>
+				<li><a href="#method_overloading_def" data-l10n-id="t6-method-overloading-def">If a few methods of an one class have the same name but signatures that are not override-equivalent, then the method name is said to be overloaded.</a></li>
+				<li class="delayed"><a href="#method_overloading_polymorphism" data-l10n-id="t6-method-overloading-polymorphism">Method overloading is one of the ways that Java implements polymorphism.</a></li>
+				<li class="delayed"><a href="#method_overloading_dinamic" data-l10n-id="t6-method-overloading-dinamic">When an overloaded method is invoked, Java uses the type and/or number of arguments as its guide to determine which version of the overloaded method to actually call.</a></li>
+				<li class="delayed"><a href="#method_overloading_return_type" data-l10n-id="t6-method-overloading-return-type">You can have two methods with the same arguments and different return types only if one of the methods is inherited and the return types are compatible.</a></li>
+			</ul>
+	</section>
+	
+	<section class="slide" id="overload_methods_2" data-l10n-id="t6-overload-methods" title="Create an overloaded method">
 		<h2 data-l10n-id="t6-overload-methods-h2">Method overloading</h2>
-	</section>	
+			<ul>
+				<li><a href="#method_overloading_diff" data-l10n-id="t6-method-overloading-diff">A difference in return type only is not sufficient to constitute an overload and is illegal.</a></li>
+				<li class="delayed" data-l10n-id="t6-method-overloading-signature">The method signature is the method's name and the parameter types.</li>
+				<li class="delayed"><a href="#method_overloading_call" data-l10n-id="t6-method-overloading-call">Overloaded methods may call one another simply by providing a normal method call with an appropriately formed argument list.</a></li>
+			</ul>
+	</section>
 	
 	<section class="slide" id="consructors" data-l10n-id="t6-consructors" title="Differentiate between default and user defined constructors">
 		<h2 data-l10n-id="t6-consructors-h2">Constructors</h2>
@@ -792,8 +807,125 @@ public class VariableOverridingTest {
 		System.out.println(obj2.getGreeting()); // "Good Bye"
 	}
 }</code></pre>
+	</section>
+	
+	<!-- Method overloading -->
+					
+	<section class="slide" id="method_overloading_def" data-l10n-id="t6-method-overloading-h2" title="Method overloading">
+		<h3 data-l10n-id="t6-method-overloading-h2">Method overloading</h3>
+		<p data-l10n-id="t6-method-overloading-def">If a few methods of an one class have the same name but signatures that are not override-equivalent, then the method name is said to be overloaded.</p>		
+		<pre><code lang="java">public class Shape {	
+	/** display Square area */
+	static void displayArea(int a) {
+		System.out.println(a*a);
+	}
+	/** display Triangle area */
+	static void displayArea(int b, int h) {
+		System.out.println((b*h)/2);
+	}	 
+	public static void main(String[] args) {
+		int a = 3, b = 4, c = 5;
+		displayArea(a);
+		displayArea(b, c);
+	}
+}</code></pre>
 	</section>	
+ 
+	<section class="slide" id="method_overloading_polymorphism" data-l10n-id="t6-method-overloading-h2" title="Method overloading">
+		<h3 data-l10n-id="t6-method-overloading-h2">Method overloading</h3>
+		<p data-l10n-id="t6-method-overloading-polymorphism">Method overloading is one of the ways that Java implements polymorphism.</p>		
+		<pre><code lang="java">public class OverloadingExample {
+	public static void print(Object foo) {
+		System.out.println("Object");
+	}
+	public static void print(Integer foo) {
+		System.out.println("Integer");
+	}
+	public static void main(String[] args) {
+		Object foo = new Integer(42);
+		print(foo);
+		Object bar = new Object();
+		print(bar);
+	}
+}</code></pre>
+	</section>
+	
+	<section class="slide" id="method_overloading_dinamic" data-l10n-id="t6-method-overloading-h2" title="Method overloading">
+		<h3 data-l10n-id="t6-method-overloading-h2">Method overloading</h3>
+		<p data-l10n-id="t6-method-overloading-dinamic">When an overloaded method is invoked, Java uses the type and/or number of arguments as its guide to determine which version of the overloaded method to actually call.</p>		
+		<pre><code lang="java">public class OverloadingExample {
+	public static void main(String[] args) {
+		print("asd");
+		print(10);
+	}
+	public static void print(int i) {
+		System.out.println("int: " + i);
+	}	
+	public static void print(String s) {
+		System.out.println("String: " + s);
+	}
+}</code></pre>
+	</section>		
+
+	<section class="slide" id="method_overloading_return_type" data-l10n-id="t6-method-overloading-h2" title="Method overloading">
+		<h3 data-l10n-id="t6-method-overloading-h2">Method overloading</h3>
+		<p data-l10n-id="t6-method-overloading-return-type">You can have two methods with the same arguments and different return types only if one of the methods is inherited and the return types are compatible.</p>		
+		<pre><code lang="java">class A { 
+    Object foo() { System.out.println("A.foo()");
+        return new Object(); 
+    } 
+}
+class B extends A { 
+    String foo() { System.out.println("B.foo()");
+        return new String(); 
+    } 
+}
+public class OverloadingExample2 {
+	public static void main(String[] args) {
+		Object foo1 = new A().foo();
+		Object foo2 = new B().foo();
+	}
+}</code></pre>
+	</section>
+	
+	<section class="slide" id="method_overloading_diff" data-l10n-id="t6-method-overloading-h2" title="Method overloading">
+		<h3 data-l10n-id="t6-method-overloading-h2">Method overloading</h3>
+		<p data-l10n-id="t6-method-overloading-diff">A difference in return type only is not sufficient to constitute an overload and is illegal.</p>		
+		<pre><code lang="java">public class OverloadingExample3 {
+	private static int sum = 0;
+	public static void main(String[] args) {
+		System.out.println(sum(1,2));
+	}	
+	public static int sum(int i, int j) { 
+        return (i + j); 
+    }
+	public static void sum(int i, int j) { 
+        sum = i + j; 
+    }	
+}</code></pre>
+	</section>
 		
+	<section class="slide" id="method_overloading_call" data-l10n-id="t6-method-overloading-h2" title="Method overloading">
+		<h3 data-l10n-id="t6-method-overloading-h2">Method overloading</h3>
+		<p data-l10n-id="t6-method-overloading-call">Overloaded methods may call one another simply by providing a normal method call with an appropriately formed argument list.</p>		
+		<pre><code lang="java">public class OverloadingExample7 {
+	public static void main(String[] args) {
+		Object a = "asd"; print(a);
+		a = 12; print(a);
+	}
+	public static void print(Object o) {
+		if (o instanceof String) print((String) o);
+		if (o instanceof Integer) print((Integer) o);
+	}	
+	private static void print(String s) {
+		System.out.println("String: " + s);
+	}	
+	private static void print(Integer i) {
+		System.out.println("Integer: " + i);
+	}
+}</code></pre>
+	</section>
+				
 </section>
 <!-- Examples end -->
 
