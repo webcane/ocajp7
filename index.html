@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>1Z0-803: Oracle Certified Associate, Java SE 7 Programmer</title>
 	
-	<script type="text/javascript" src="l10n.js"></script>
 	<link rel="resource" type="application/l10n" href="l10n.properties" />
 	
 	<link href="slideshow.css" rel="stylesheet" />
@@ -14,22 +13,7 @@
 	<link href="ribbon.css" rel="stylesheet" />
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="prefixfree.min.js"></script>
-	<script type="text/javascript">
-	    function onLocalized() {
-	      var l10n = document.webL10n,
-	          textProp = document.body.textContent ? 'textContent' : 'innerText';
-	      document.getElementsByTagName('select')[0].value = l10n.getLanguage();
-	    };
-	    if (document.addEventListener) {
-	      window.addEventListener('localized', onLocalized, false);
-	    } else {
-	      document.documentElement.localized = 0;
-	      document.documentElement.attachEvent('onpropertychange', function(e) {
-	        if (e.propertyName === 'localized')
-	          onLocalized();
-	      });
-	    }
-	</script>	
+		
 </head>
 <body>
 
@@ -969,24 +953,42 @@ public class OverloadingExample2 {
 	</ul>
 </footer>
 
-<script src="slideshow.js"></script>
-<script src="plugins/css-edit.js"></script>
-<script src="plugins/css-snippets.js"></script>
-<script src="plugins/css-controls.js"></script>
-<script src="plugins/code-highlight.js"></script>
-<script>
-var slideshow = new SlideShow();
-
-var snippets = document.querySelectorAll('.snippet');
-for (var i=0; i<snippets.length; i++) {
-	new CSSSnippet(snippets[i]);
-}
-
-var cssControls = document.querySelectorAll('.css-control');
-for(var i=0; i<cssControls.length; i++) {
-	new CSSControl(cssControls[i]);
-}
-</script>
+	<script src="slideshow.js"></script>
+	<script src="plugins/css-edit.js"></script>
+	<script src="plugins/css-snippets.js"></script>
+	<script src="plugins/css-controls.js"></script>
+	<script src="plugins/code-highlight.js"></script>
+	<script>
+	var slideshow = new SlideShow();
+	
+	var snippets = document.querySelectorAll('.snippet');
+	for (var i=0; i<snippets.length; i++) {
+		new CSSSnippet(snippets[i]);
+	}
+	
+	var cssControls = document.querySelectorAll('.css-control');
+	for(var i=0; i<cssControls.length; i++) {
+		new CSSControl(cssControls[i]);
+	}
+	</script>
+	
+	<script type="text/javascript" src="l10n.js"></script>
+	<script type="text/javascript">
+	    function onLocalized() {
+	      var l10n = document.webL10n,
+	          textProp = document.body.textContent ? 'textContent' : 'innerText';
+	      document.getElementsByTagName('select')[0].value = l10n.getLanguage();
+	    };
+	    if (document.addEventListener) {
+	      window.addEventListener('localized', onLocalized, false);
+	    } else {
+	      document.documentElement.localized = 0;
+	      document.documentElement.attachEvent('onpropertychange', function(e) {
+	        if (e.propertyName === 'localized')
+	          onLocalized();
+	      });
+	    }
+	</script>
 	
 </body>
 </html>
