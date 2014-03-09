@@ -4,3 +4,5 @@
 
 Warning: Only works in latest Firefox, Opera, Safari or Chrome.
 For more information, see the [sample slideshow](http://leaverou.me/csss/sample-slideshow.html) 
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/webcane/ocajp7/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
